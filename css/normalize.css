@@ -1,0 +1,45 @@
+/* normalize.css */
+/* Corrige line-height em todos os navegadores */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Remove margens padrão */
+body {
+  margin: 0;
+}
+
+/* Ajuste em headings */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Remove estilos padrões de listas */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Links sem decoração por padrão */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Corrige estilo de botões */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* Imagens nunca maiores que o container */
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}

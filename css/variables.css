@@ -1,0 +1,92 @@
+/* --------------------
+Importação das Fonts
+--------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+/* --------------------
+   Reset global
+   --------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+    
+/* --------------------
+    Tamanho base font REM
+--------------------- */
+html {
+    font-size: 16px;
+}
+
+/* --------------------
+   Variáveis globais
+--------------------- */
+:root {
+    /* Color */
+    --primary-color: #ffffff;
+    --secundary-color: #000000;
+    --tertiary-color: #1B3A57;
+    --quaternary-color: #3B7EBD;
+    --quintenary-color: #00c48c;
+    --sixth-color: #f5f5f5;
+    --seventh-color: #1542A6;
+    --octave-color: linear-gradient(90deg, var(--tertiary-color), var(--quaternary-color));
+    --primary-silver-color: #cfcfcf; 
+
+    /* Familia da fonte */
+    --font-family-base: 'Inter', sans-serif;
+    --font-family-heading: 'Instrument Sans', sans-serif;
+    /* Tamanho da fonte */
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    /* Espaçamentos entre as linhas */
+    --line-height-tight: 1.2rem;
+    --line-height-base: 1.5rem;
+    --line-height-relaxed: 1.7rem;
+    /* Peso da fonte */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /* Espaçamento - margin e padding */
+    --spacing-1: 0.25rem;  /* 4px */
+    --spacing-2: 0.5rem;   /* 8px */
+    --spacing-3: 0.75rem;  /* 12px */
+    --spacing-4: 1rem;     /* 16px */
+    --spacing-6: 1.5rem;   /* 24px */
+    --spacing-8: 2rem;     /* 32px */
+    --spacing-12: 3rem;    /* 48px */
+
+    /* Bordas radius */
+    --border-radius-sm: 0.125rem;  /* 2px */
+    --border-radius-md: 0.375rem;  /* 6px */
+    --border-radius-lg: 0.5rem;    /* 8px */
+    --border-radius-xl: 1rem;    /* 16px */
+    --border-radius-full: 9999px;  /* círculo */
+    /* Tamanho das bordas */
+    --border-width-thin: 1px;
+    --border-width-thick: 2px;
+    --border-width-strong: 3px;
+
+    /* Shadows - sombras */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.15);
+
+    /* Transitions - options */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 300ms ease-in-out;
+    --transition-slow: 500ms ease;
+}
