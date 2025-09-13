@@ -1,14 +1,82 @@
-/* --------------------
-   Estilo da página
---------------------- */
-/* ---- GERAL ---- */
+*{
+   border: 0;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
 
+/* ---- GERAL ---- */
+body{
+   height: 100vh;
+   font-family: Arial, sans-serif;
+   background-color: #fff;
+   color: #333;
+   padding: 20px;
+}
 
 /* ---- CABEÇALHO ---- */
 
 
 /* ---- PÁGINA ---- */
+#titulo {
+   text-align: center;
+   font-size: 2rem;
+   margin-bottom: 10px;
+}
 
+#subtitulo {
+   text-align: center;
+   color: #666;
+   margin-bottom: 30px;
+}
+
+form {
+   max-width: 90%;
+   margin: 0 auto 40px;
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.40);
+}
+
+label {
+   display: block;
+   margin-top: 15px;
+   font-weight: bold;
+}
+
+input, textarea{
+   width: 100%;
+   padding: 10px;
+   margin-top: 15px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   font-size: 1rem;
+}
+
+.campo_duplo {
+   display: flex;
+   gap: 30px;
+}
+
+.campo_duplo div {
+   flex: 1;
+}
+
+button {
+   margin-top: 20px;
+   width: 100%;
+   padding: 20px;
+   background: #FF6200;
+   color: white;
+   border-radius: 6px;
+   font-size: 1rem;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #e55b00;
+}
 
 /* ---- RODAPÉ ----- */
 
