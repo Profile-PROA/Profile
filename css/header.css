@@ -3,7 +3,22 @@
 --------------------- */
 
 /* ---- CABEÇALHO ---- */
+#header-site {
+    margin-bottom: 200px;
+    background: var(--octave-color);
+    font-family: var(--font-family-base);
+    color: var(--primary-color);
+    position: relative;
+    width: 100%;
+}
 
+/* box logo */
+
+/* barra nav */
+
+/* btn's reponsivo */
+
+/* barra nav responsivo */
 
 /* --------------------
    Responsividade
