@@ -24,43 +24,43 @@
     <header id="header-site">
         <!-- Logo -->
         <section id="logo-header">
-            <a href="./index.html" target="_self">
-                <img src="" alt="Logo do profile" title="Logo profile">
+            <a href="./index.html" target="_self" rel="next">
+                <img src="./assets/images/Logo.svg" alt="Logo do profile" title="Logo profile">
             </a>
         </section>
 
         <!-- Barra de navegação não responsiva -->
-        <section id="box-nav">
-            <nav>
-                <ul>
-                    <li class="list-nav">
-                        <a href="./index.html" target="_self">Home</a>
-                    </li>
-                    
-                    <li class="list-nav">
-                        <a href="./pages/about.html" target="_self">Sobre nós</a>
-                    </li>
-                    
-                    <li class="list-nav">
-                        <a href="./pages/contact.html" target="_self">Contato</a>
-                    </li>
-                    
-                    <li class="list-nav btn-curriculum">
-                        <a href="pages/curriculumForms.html" target="_self">
-                            <i></i>
-                            Faça seu currículo
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+        <nav id="box-nav">
+            <ul>
+                <li class="li-nav">
+                    <a href="./index.html" target="_self" rel="next">Home</a>
+                </li>
+                
+                <li class="li-nav">
+                    <a href="./pages/about.html" target="_self" rel="next">Sobre nós</a>
+                </li>
+                
+                <li class="li-nav">
+                    <a href="./pages/contact.html" target="_self" rel="next">Contato</a>
+                </li>
+                
+                <li class="btn-curriculum">
+                    <a href="pages/curriculumForms.html" target="_self" rel="next">
+                        <iconify-icon icon="material-symbols:docs-outline" width="24"></iconify-icon>
+                        Faça seu currículo
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
         <!-- Botão doar e icone para responsividade -->
-        <section id="box-nav-options-resposive" style="display: none;">
-            <a href="pages/curriculumForms.html" target="_self">
-                <i></i>
-                Faça seu currículo
-            </a>
+        <section id="box-nav-options-resposive">
+            <button class="btn-curriculum">
+                <a href="pages/curriculumForms.html" target="_self" rel="next">
+                    <iconify-icon icon="material-symbols:docs-outline" width="24"></iconify-icon>
+                    Faça seu currículo
+                </a>
+            </button>
             
             <div class="btn-mobile">
                 <div class="line1"></div>
@@ -70,17 +70,15 @@
         </section>
 
         <!-- Links do responsivo -->
-        <section id="box-nav-reponsive" style="display: none;">
-            <nav>
-                <ul>
-                    <li><a href="./index.html" target="_self">Home</a></li>
-                
-                    <li><a href="./pages/about.html" target="_self">Sobre nós</a></li>
-                
-                    <li><a href="./pages/contact.html" target="_self">Contato</a></li>
-                </ul>
-            </nav>
-        </section>
+        <nav id="box-nav-reponsive">
+            <ul>
+                <li class="li-nav"><a href="./index.html" target="_self" rel="next">Home</a></li>
+            
+                <li class="li-nav"><a href="./pages/about.html" target="_self" rel="next">Sobre nós</a></li>
+            
+                <li class="li-nav"><a href="./pages/contact.html" target="_self" rel="next">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Corpo do site - main -->
