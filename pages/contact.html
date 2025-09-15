@@ -23,10 +23,23 @@
 
     <!-- Corpo do site - main -->
     <main>
-        <h1 id="titulo">Entre em Contato</h1>
-        <p id="subtitulo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam mollitia reiciendis excepturi. Corrupti quis placeat, hic a recusandae ipsa ab similique nihil mollitia eos libero quo eius nesciunt autem!</p>
+        <div id="titulo">
+            <h1>Entre em <span id="texto_linear">Contato</span></h1>
+        </div>
+        <div id="area_subtitulo">
+            <p id="subtitulo">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam mollitia reiciendis excepturi. Corrupti quis placeat, hic a recusandae ipsa ab similique nihil mollitia eos libero quo eius nesciunt autem!</p>
+        </div>
 
         <form>
+            <div class="header_formulario">
+                <div class="icon-box">
+                    <img src="../assets/images/caixamensagem.svg" alt="Caixa de Mensagem">
+                </div>
+                <div>
+                    <h2>Envie uma Mensagem</h2>
+                    <p>Vamos conversar sobre sua dúvida</p>
+                </div>
+            </div>
             <div class="campo_duplo">
                 <div>
                     <label for="nome">Seu nome</label>
@@ -39,14 +52,56 @@
                 </div>
             </div>
 
-            <label for="assunto">Assunto</label>
-            <input type="text" id="assunto" placeholder="Digite o assunto">
+            <div class="campo">
+                <label for="assunto">Assunto</label>
+                <input type="text" id="assunto" placeholder="Digite o assunto">
+            </div>
 
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+            <div class="campo">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+            </div>
 
             <button type="submit">Enviar mensagem</button>
         </form> 
+
+        <section class="contato_info">
+            <h2>Como Falar Conosco</h2>
+            <p>Somos uma equipe 100% online. Escolha a melhor forma de entrar em contato:</p>
+
+            <div class="info_cards">
+                <div class="info_item">
+                    <div class="icon email_icon">
+                        <img src="../assets/images/caixaemail.svg" alt="E-mail">
+                    </div>
+                    <div class="info_texto_item">
+                        <h3>E-mail</h3>
+                        <p>contato@empresa.com</p>
+                    </div>
+                </div>
+
+                <div class="info_item">
+                    <div class="icon chat_icon">
+                        <img src="../assets/images/caixamensagemverde.svg" alt="Chat Online">
+                    </div>
+                    <div class="info_texto_item">
+                        <h3>Chat Online</h3>
+                        <p>Disponível no site durante horário comercial</p>
+                    </div>
+                </div>
+
+                <div class="info_item">
+                    <div class="icon horario_icon">
+                        <img src="../assets/images/caixahorario.svg" alt="Horário de Atendimento">
+                    </div>
+                    <div class="info_texto_item">
+                        <h3>Horário de Atendimento</h3>
+                        <p>Segunda a Sexta: 9h às 18h (GMT-3)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Rodapé -->
