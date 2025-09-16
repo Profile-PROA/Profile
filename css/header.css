@@ -1,0 +1,289 @@
+/* --------------------
+   Estilo da página
+--------------------- */
+/* ---- GERAL ---- */
+body > main {
+    padding-top: 95px;
+}
+
+/* ---- CABEÇALHO ---- */
+#header-site {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
+    font-family: var(--font-family-base);
+    color: var(--primary-color);
+    padding: var(--spacing-2) var(--spacing-12);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-fast);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+}
+
+.header-fixed-top {
+    height: 95px !important;
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    transition: var(--transition-fast);
+}
+
+/* box logo */
+#logo-header {
+    max-width: 30%;
+}
+
+#logo-header a {
+    display: block;
+    width: 70%;
+    height: 95px;
+}
+
+#logo-header a img {
+    width: 100%;
+    height: 100%;
+}
+
+/* barra nav */
+#box-nav {
+    width: 70%;
+}
+
+#box-nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#box-nav ul li {
+    height: 40px;
+}
+
+.li-nav {
+    position: relative;
+    overflow: hidden;
+    padding: 0 var(--spacing-6);
+    transition: var(--transition-fast);
+    font-size: var(--font-size-lg);
+}
+
+.li-nav a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.li-nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0);
+    background-color: var(--primary-silver-color);
+    border-radius: var(--border-radius-md);
+    transition: var(--transition-fast);
+}
+
+.li-nav:hover::before {
+    opacity: 0.4;
+    transform: scale(1);
+}
+
+.btn-curriculum {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: solid var(--border-width-thick) var(--primary-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+}
+
+.btn-curriculum:hover {
+    color: var(--secundary-color);
+    background-color: var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+.btn-curriculum:active {
+    background-color: var(--primary-silver-color);
+    border-color: var(--primary-silver-color);
+    transition: var(--transition-fast);
+}
+
+.btn-curriculum a {
+    padding: var(--spacing-1) var(--spacing-8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-lg) !important;
+}
+
+/* btn's reponsivo */
+#box-nav-options-resposive {
+    position: relative;
+    display: none;
+    gap: var(--spacing-8);
+}
+
+#box-nav-options-resposive button {
+    height: 40px;
+    font-size: var(--font-size-lg);
+}
+
+.btn-mobile {
+    cursor: pointer;
+}
+
+.btn-mobile div {
+    width: 32px;
+    height: 3px;
+    margin: var(--spacing-2);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+/* efeito de click */
+.btn-mobile.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 10px);
+    transition: var(--transition-fast);
+}
+
+.btn-mobile.active .line2 {
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.btn-mobile.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+    transition: var(--transition-fast);
+}
+
+/* barra nav responsivo */
+#box-nav-reponsive {
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 75vw;
+    height: 100vh;
+    background: var(--sixth-color);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+    transform: translateX(100%);
+}
+
+#box-nav-reponsive ul {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#box-nav-reponsive ul li {
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+}
+
+#box-nav-reponsive ul li a {
+    color: var(--secundary-color);
+    width: 100%;
+    text-align: center;
+}
+
+/* Efeito nav fixa no topo */
+#box-nav-reponsive.nav-fix {
+    top: 95px !important;
+    transition: var(--transition-fast);
+}
+
+/* Efeito abrir nav no mobile */
+#box-nav-reponsive.active {
+    transform: translateX(0) !important;
+}
+
+/* Efeito ao abrir nav */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* --------------------
+   Responsividade
+--------------------- */
+
+/* -------- TABLET -------- */
+@media (max-width: 1024px) {
+    /* barra nav */
+    #box-nav {
+        display: none;
+    }
+
+    /* btn's reponsivo */
+    #box-nav-options-resposive {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+/* -------- MOBILE GRANDE -------- */
+@media (max-width: 768px) {
+    /* barra nav */
+    .btn-curriculum a {
+        padding: var(--spacing-1) var(--spacing-2);
+        font-size: var(--font-size-base) !important;
+    }
+}
+
+
+/* -------- MOBILE -------- */
+@media (max-width: 480px) {
+    /* geral */
+    #header-site {
+        padding: var(--spacing-2) var(--spacing-2);
+    }
+
+    /* box logo */
+    #logo-header a {
+        width: 90px;
+    }
+
+    /* barra nav */
+    .btn-curriculum a {
+        padding: var(--spacing-1) var(--spacing-1);
+        gap: var(--spacing-1);
+        font-size: var(--font-size-sm) !important;
+    }
+
+    /* btn's reponsivo */
+    #box-nav-options-resposive {
+        gap: var(--spacing-1);
+    }
+}
