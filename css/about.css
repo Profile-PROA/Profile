@@ -2,34 +2,431 @@
    Estilo da página
 --------------------- */
 /* ---- GERAL ---- */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
 
-
-/* ---- CABEÇALHO ---- */
-
+main {
+   font-family: 'Inter', sans-serif;
+   line-height: 1.6;
+   color: #333;
+}
 
 /* ---- PÁGINA ---- */
+.secao-principal {
+   height: 100vh;
+   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: white;
+   position: relative;
+   padding: 2rem;
+}
+
+.placeholder-imagem {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url(/assets/images/background_sobre\ nós.png);
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 2rem;
+   color: #666;
+   z-index: -1;
+}
+
+.conteudo-principal {
+   max-width: 800px;
+   z-index: 2;
+   animation: slideUp 1s ease-out;
+}
+
+.titulo-principal {
+   font-size: 3.5rem;
+   font-weight: bold;
+   margin-bottom: 1.5rem;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitulo {
+   font-size: 1.7rem;
+   margin-bottom: 5rem;
+   opacity: 0.9;
+}
+
+.botao-principal {
+   background: linear-gradient(45deg, #ff6b35, #f7931e);
+   color: white;
+   padding: 15px 35px;
+   border: none;
+   border-radius: 50px;
+   font-size: 1.1rem;
+   font-weight: bold;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.botao-principal:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+   background: linear-gradient(45deg, #f7931e, #ff6b35);
+}
+
+/* ---- SEÇÃO SOBRE ---- */
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+.sobre {
+   padding: 80px 0;
+   background: #f8f9fa;
+}
+
+.conteudo-sobre {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 60px;
+   align-items: center;
+}
+
+.texto-sobre {
+   background: linear-gradient(135deg, #ff6b35, #f7941d);
+   color: white;
+   padding: 40px;
+   border-radius: 20px;
+}
+
+.texto-sobre h2 {
+   font-size: 2.5rem;
+   margin-bottom: 20px;
+}
+
+.texto-sobre p {
+   font-size: 1.3rem;
+   line-height: 1.8;
+}
+
+.imagem-sobre {
+   background: url(/assets/images/de_onde_viemos.png);
+   background-size: cover;
+   background-position: center;
+   height: 400px;
+   border-radius: 20px;
+}
+
+/* ---- SEÇÃO MISSÃO, VISÃO E VALORES ---- */
+.missao_visao_valores {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   font-family: var(--fonte-sans);
+   background: #f2f2f2;
+   padding: 2rem 0;
+}
+
+.missao_visao_valores h1{
+   text-align: center;
+   margin-bottom: 4rem; 
+   font-size: 3.5rem; 
+}
 
 
-/* ---- RODAPÉ ----- */
+.conteudo_missao {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 2rem;
+   max-width: 1400px;
+   width: 100%;
+   justify-items: center;
+   margin-bottom: 4rem;
+}
+
+/* ---- SEÇÃO SLOGAN ---- */
+.secao-slogan {
+    padding: 4rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.container-slogan {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.texto-slogan {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.destaque-slogan {
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+
+/* ---- SEÇÃO EQUIPE ---- */
+.secao-equipe {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.container-equipe {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-equipe {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.subtitulo-equipe {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.carrossel-equipe {
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.container-cards-equipe {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 2rem;
+}
+
+.card-membro {
+    min-width: 300px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card-membro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.imagem-membro img {
+    min-width: 300px;
+    height: 250px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-membro {
+    padding: 1.5rem;
+}
+
+.nome-membro {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.controles-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.botao-carrossel {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-carrossel:hover {
+    background: #f7931e;
+    transform: scale(1.1);
+}
+
+.indicadores-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicador.ativo {
+    background: #ff6b35;
+    transform: scale(1.2);
+}
 
 
 /* --------------------
    Responsividade
 --------------------- */
 
-/* -------- TABLET -------- */
-@media (max-width: 1024px) {
 
+@media (min-width: 900px) {
+   .conteudo_missao {
+      grid-template-columns: repeat(3, 1fr);
+   }
 }
+
+.card {
+   position: relative;
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+   padding: 2rem;
+   height: 600px;
+   color: #fff;
+   text-align: center;
+   border-radius: 16px;
+   overflow: hidden;
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+   transition: transform var(--duracao) var(--easing);
+   max-width: 420px;
+}
+
+.card::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background-size: cover;
+   background-position: center;
+   transition: transform calc(var(--duracao) * 1.5) var(--easing);
+   z-index: 0;
+}
+
+.card::after {
+   content: '';
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.85));
+   transition: transform calc(var(--duracao) * 2) var(--easing);
+}
+
+.conteudo-card {
+   position: relative;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: transform var(--duracao) var(--easing);
+   transform: translateY(calc(100% - 5.5rem));
+}
+
+.conteudo-card>*:not(.titulo) {
+   opacity: 0;
+   transform: translateY(1rem);
+   transition: all var(--duracao) var(--easing);
+}
+
+.titulo {
+   font-size: 2.6rem;
+   /* Aumentei a fonte do título */
+   font-weight: bold;
+}
+
+.imagem-card {
+   width: 200px;
+   /* Aumentei o tamanho da imagem */
+   height: 200px;
+   margin: 2rem 0;
+   object-fit: contain;
+   pointer-events: none;
+}
+
+.descricao {
+   font-family: var(--font-family-heading);
+   font-size: 1.4rem;
+   /* Fonte maior para descrição */
+   margin: 1.5rem 0;
+}
+
+/* Hover interativo */
+.card:hover::before {
+   transform: scale(1.1);
+}
+
+.card:hover .conteudo-card {
+   transform: translateY(0);
+}
+
+.card:hover .conteudo-card>*:not(.titulo) {
+   opacity: 1;
+   transform: translateY(0);
+   transition-delay: calc(var(--duracao) / 8);
+}
+
+/* Imagens de fundo */
+.card:nth-child(1)::before {
+   background-image: url(/assets/images/missão.jpg);
+}
+
+.card:nth-child(2)::before {
+   background-image: url(/assets/images/visão.jpg);
+}
+
+.card:nth-child(3)::before {
+   background-image: url(/assets/images/valores.jpg);
+}
+
+/* -------- TABLET -------- */
+@media (max-width: 1024px) {}
 
 
 /* -------- MOBILE GRANDE -------- */
-@media (max-width: 768px) {
+@media (max-width: 768px) {}
 
-}
-
+.card-membro {
+        min-width: 280px;
+    }
 
 /* -------- MOBILE -------- */
-@media (max-width: 480px) {
-
-}
+@media (max-width: 480px) {}

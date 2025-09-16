@@ -90,3 +90,13 @@ html {
     --transition-base: 300ms ease-in-out;
     --transition-slow: 500ms ease;
 }
+
+/* --------------------
+   Variáveis específicas
+--------------------- */
+
+:root {
+      --duracao: 700ms;
+      --easing: cubic-bezier(0.19, 1, 0.22, 1);
+      --fonte-sans: 'Rubik', sans-serif;
+    }
