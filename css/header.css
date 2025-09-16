@@ -11,7 +11,7 @@ body > main {
     position: fixed;
     top: 0;
     z-index: 10;
-    background: var(--octave-color);
+    background: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
     font-family: var(--font-family-base);
     color: var(--primary-color);
     padding: var(--spacing-2) var(--spacing-12);
