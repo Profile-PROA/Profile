@@ -10,7 +10,7 @@
 /* topo do footer */
 #box-top-footer {
     width: 100%;
-    background: var(--octave-color);
+    background: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

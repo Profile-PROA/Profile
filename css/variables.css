@@ -37,7 +37,7 @@ html {
     --quintenary-color: #00c48c;
     --sixth-color: #f5f5f5;
     --seventh-color: #D120FF;
-    --octave-color: linear-gradient(90deg, var(--tertiary-color), var(--quaternary-color));
+    --octave-color: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
     --primary-silver-color: #cfcfcf; 
 
     /* Familia da fonte */
