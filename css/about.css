@@ -239,8 +239,7 @@ main {
 
 .imagem-membro img {
     min-width: 300px;
-    height: 250px;
-    background: #f0f0f0;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
