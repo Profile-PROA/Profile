@@ -12,28 +12,349 @@
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
     <!-- Link para o estilo da página css -->
     <link rel="stylesheet" href="../css/curriculumForms.css" type="text/css">
-    <!-- Link para o estilo Header do css -->
-    <link rel="stylesheet" href="../css/header.css" type="text/css">
-    <!-- Link para o estilo Footer do css -->
-    <link rel="stylesheet" href="../css/footer.css" type="text/css">
-        <!-- Link para icones do Google Icons -->
+    <!-- Link para icones do Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=lightbulb"/>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-
+    <header id="header-forms">
+        <sectiion id="box-btn-back">
+            <button class="btn-forms">
+                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" id="arrow-back-page" class="rotate-arrow"></iconify-icon>
+                Voltar ao início
+            </button>
+        </sectiion>
+        
+        <sectiion id="box-btn-pdf">
+            <button class="btn-forms btn-forms-orange">
+                <iconify-icon icon="material-symbols:download" width="24" height="24"></iconify-icon>
+                Baixar PDF
+            </button>
+        </sectiion>
     </header>
 
     <!-- Corpo do site - main -->
-    <main>
+    <main id="container-forms">
+        <aside id="box-sidebar">
+            <ul id="list-steps">
+                <li id="li-data" class="activeLi">
+                    <span class="activeSpan">1</span>
+                    Dados
+                </li>
 
+                <li id="li-experience">
+                    <span>2</span>
+                    Experiência
+                </li>
+
+                <li id="li-skills">
+                    <span>3</span>
+                    Habilidades
+                </li>
+                
+                <li id="li-preferences">
+                    <span>4</span>
+                    Preferências
+                </li>
+                
+                <li id="li-models">
+                    <span>5</span>
+                    Modelos
+                </li>
+                
+                <li id="li-preview">
+                    <span>6</span>
+                    Preview
+                </li>
+            </ul>
+        </aside>
+
+        <section id="box-forms-content">
+            <header id="header-forms-content">
+                <h2 id="title-header-forms-content">
+                    <iconify-icon icon="mdi:user" width="35" height="35"></iconify-icon>
+                    Dados pessoais
+                </h2>
+            </header>
+            
+            <section id="forms-content">
+                <p id="description-forms-content">
+                    <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                    Informações fundamentais para contato
+                </p>
+
+                <form id="form-wizard">
+                    <!-- Etapa 1: Dados Pessoais -->
+                    <div id="step-data" class="step">
+                        <div class="box-inputs-data">
+                            <div class="box-input-data">
+                                <label for="fullName">Nome completo:</label>
+                                <input type="text" id="fullName" name="fullName" class="input-curriculum" placeholder="Digite seu nome completo...">
+                            </div>
+
+                            <div class="box-input-data">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" class="input-curriculum" placeholder="Digite seu e-mail...">
+                            </div>
+                        </div>
+
+                        <div class="box-inputs-data">
+                            <div class="box-input-data">
+                                <label for="phone">Telefone:</label>
+                                <input type="text" id="phone" name="phone" class="input-curriculum" placeholder="Digite seu telefone (11) 99999-9999...">
+                            </div>
+
+                            <div class="box-input-data">
+                                <label for="linkedin">Link do Linkedin:</label>
+                                <input type="text" id="linkedin" name="linkedin" class="input-curriculum" placeholder="Digite o link do Linkedin (Opcional)...">
+                            </div>
+                        </div>
+                        
+                        <div class="box-inputs-data">
+                            <div class="box-input-data">
+                                <label for="state">Estado:</label>
+                                <input type="text" id="state" name="state" class="input-curriculum" placeholder="Digite o estado que você mora...">
+                            </div>
+
+                            <div class="box-input-data">
+                                <label for="city">Cidade:</label>
+                                <input type="text" id="city" name="city" class="input-curriculum" placeholder="Digite a cidade que você mora...">
+                            </div>
+                        </div>
+                        
+                        <div class="box-inputs-data">
+                            <div id="input-link-portfolio" class="box-input-data">
+                                <label for="portfolio">Link do portfólio:</label>
+                                <input type="text" id="portfolio" name="portfolio" class="input-curriculum" placeholder="Digite o link do seu portfólio (Opcional)...">
+                            </div>
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button class="btn-forms btn-forms-gray" disabled>
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                Voltar
+                            </button>
+
+                            <button class="btn-forms btn-forms-orange">
+                                Próximo
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 2: Experiência -->
+                    <div id="step-experience" class="step">
+                        <fieldset>
+                            <div class="box-inputs-experience">
+                                <div class="box-input-experience">
+                                    <label for="cargo">Cargo:</label>
+                                    <input type="text" id="cargo" name="cargo" class="input-curriculum" placeholder="Digite o cargo ocupado...">
+                                </div>
+
+                                <div class="box-input-experience">
+                                    <label for="empresa">Empresa:</label>
+                                    <input type="text" id="empresa" name="empresa" class="input-curriculum" placeholder="Digite o nome da empresa...">
+                                </div>
+                            </div>
+
+                            <div class="box-inputs-experience">
+                                <div class="box-input-experience">
+                                    <label for="periodo">Período:</label>
+                                    <input type="text" id="periodo" name="periodo" class="input-curriculum" placeholder="Ex.: mar. 2024 - fev, 2025">
+                                </div>
+
+                                <div class="box-input-experience">
+                                    <label for="atividades">Atividades:</label>
+                                    <input type="text" id="atividades" name="atividades" class="input-curriculum" placeholder="Principais atividades...">
+                                </div>
+                            </div>
+
+                            <div class="box-inputs-experience">
+                                <div class="box-input-experience">
+                                    <label for="resultados">Resultados:</label>
+                                    <input type="text" id="resultados" name="resultados" class="input-curriculum" placeholder="Ex.: +20% eficiência...">
+                                </div>
+
+                                <div id="btn-trash-experience">
+                                    <button class="btn-forms btn-forms-gray">
+                                        <iconify-icon icon="iconamoon:trash" width="24" height="24"></iconify-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div id="btn-add-experience">
+                            <button class="btn-forms btn-forms-gray">
+                                + Adicionar experiência
+                            </button>
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button class="btn-forms btn-forms-gray" disabled>
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                Voltar
+                            </button>
+
+                            <button class="btn-forms btn-forms-orange">
+                                Próximo
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                            </button>
+                        </div>                        
+                    </div>
+
+                    <!-- Etapa 3: Habilidades -->
+                    <div id="step-skills" class="step">
+                        <div class="box-inputs-skills">
+                            <div class="box-input-skills">
+                                <label for="Techniques">Técnicas:</label>
+                                <textarea id="Techniques" name="Techniques" class="input-curriculum" placeholder="Ex.: React, Node.js, Tailwind, SQL..."></textarea>
+                            </div>
+
+                            <div class="box-input-skills">
+                                <label for="Interpersonal">Interpessoais:</label>
+                                <textarea id="Interpersonal" name="Interpersonal" class="input-curriculum" placeholder="Ex.: Comunicação, Proatividade..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button class="btn-forms btn-forms-gray" disabled>
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                Voltar
+                            </button>
+
+                            <button class="btn-forms btn-forms-orange">
+                                Próximo
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 4: Preferência -->
+                    <div id="step-preferences" class="step">
+                        <div class="box-inputs-preferences">
+                            <input type="radio" id="bigTech" name="preference" value="Big Tech" checked>
+                            <label for="bigTech">Big Tech</label>
+
+                            <input type="radio" id="startup" name="preference" value="Startup">
+                            <label for="startup">Startup</label>
+
+                            <input type="radio" id="tradicional" name="preference" value="Tradicional">
+                            <label for="tradicional">Tradicional</label>
+
+                            <input type="radio" id="ats" name="preference" value="ATS-Friendly">
+                            <label for="ats">ATS-Friendly</label>
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button class="btn-forms btn-forms-gray" disabled>
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                Voltar
+                            </button>
+
+                            <button class="btn-forms btn-forms-orange">
+                                Próximo
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 5: Modelos -->
+                    <div id="step-models" class="step">
+                        <div class="box-inputs-models">
+                            <input type="radio" id="cleanTech" name="models" value="cleanTech" checked>
+                            <label for="cleanTech" class="card-models">
+                                <div class="header-card-models">
+                                    <iconify-icon icon="material-symbols:docs-outline" width="30" height="30"></iconify-icon>
+                                    <h3>CleanTech</h3>
+                                </div> 
+                                
+                                <span class="type-model-card">Big Tech</span>
+
+                                <p>Layout limpo com foco em métricas e resultados.</p>
+                                
+                                <div class="category-model-card">
+                                    <span>ATS</span>
+                                    <span>Minimalista</span>
+                                </div>
+                            </label>
+
+
+                            <input type="radio" id="startupSpark" name="models" value="startupSpark">
+                            <label for="startupSpark" class="card-models">
+                                <div class="header-card-models">
+                                    <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                    <h3>StartupSpark</h3>
+                                </div> 
+                                
+                                <span class="type-model-card">Startup</span>
+
+                                <p>Mais cor e hierarquia curta para leitura rápida.</p>
+                                
+                                <div class="category-model-card">
+                                    <span>Criativo</span>
+                                    <span>Impacto visual</span>
+                                </div>
+                            </label>
+
+
+                            <input type="radio" id="classicPro" name="models" value="classicPro">
+                            <label for="classicPro" class="card-models">
+                                <div class="header-card-models">
+                                    <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                    <h3>ClassicPro</h3>
+                                </div> 
+                                
+                                <span class="type-model-card">Tradicional</span>
+
+                                <p>Estrutura clássica priorizando histórico.</p>
+                                
+                                <div class="category-model-card">
+                                    <span>Formal</span>
+                                </div>
+                            </label>
+
+
+                            <input type="radio" id="atsPlain" name="models" value="atsPlain">
+                            <label for="atsPlain" class="card-models">
+                                <div class="header-card-models">
+                                    <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                    <h3>ATS Plain</h3>
+                                </div> 
+                                
+                                <span class="type-model-card">ATS-Friendly</span>
+
+                                <p>Sem elementos gráficos, ideal para triagem automática.</p>
+                                
+                                <div class="category-model-card">
+                                    <span>Texto puro</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button class="btn-forms btn-forms-orange">
+                                Continuar
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 6: Preview -->
+                    <div id="step-preview" class="step">
+                        <div id="box-preview-curriculum">
+
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button class="btn-forms btn-forms-gray" disabled>
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                Voltar aos modelos
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
     </main>
-
-    <!-- Rodapé -->
-    <footer>
-
-    </footer>
 
     <!-- API Libras -->
     <div vw class="enabled">
@@ -54,8 +375,8 @@
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 
-<!-- JS Main -->
-<script src="../js/main.js" defer></script>
+<!-- JS Form Wizard -->
+<script src="../js/formWizard.js" defer></script>
 
 <!-- Link para Icones do Iconify -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>

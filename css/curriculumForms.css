@@ -2,16 +2,447 @@
    Estilo da página
 --------------------- */
 /* ---- GERAL ---- */
+#container-forms, #header-forms {
+   width: 100%;
+   font-family: var(--font-family-base);
+   padding: var(--spacing-6) var(--spacing-8);
+}
+
+/* padrões de buttons */
+.btn-forms {
+   padding: var(--spacing-2) var(--spacing-6);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: var(--border-radius-md);
+   gap: var(--spacing-2);
+   box-shadow: var(--shadow-sm);
+   cursor: pointer;
+}
+
+.btn-forms-orange {
+   background: var(--quaternary-color);
+   color: var(--primary-color);
+   transition: var(--transition-fast);
+}
+
+.btn-forms-orange:hover {
+   background: var(--tertiary-color);
+   transition: var(--transition-fast);
+}
+
+.btn-forms-orange:active {
+   background: var(--quaternary-color);
+   transition: var(--transition-fast);
+}
+
+.btn-forms-gray {
+   background-color: var(--sixth-color);
+   color: var(--secundary-color);
+   transition: var(--transition-fast);
+}
+
+.btn-forms-gray:hover {
+   background-color: var(--primary-silver-color);
+   transition: var(--transition-fast);
+}
+
+.btn-forms-gray:active {
+   background-color: var(--sixth-color);
+   transition: var(--transition-fast);
+}
+
+/* Inputs do form wizard */
+.input-curriculum {
+   width: 100%;
+   border: solid #00000080 var(--border-width-thin);
+   border-radius: var(--border-radius-md);
+   padding: var(--spacing-3) var(--spacing-1);
+   outline: unset;
+}
+
+/* detalhes para icones */
+.rotate-arrow {
+   transform: rotate(180deg);
+}
 
 
-/* ---- CABEÇALHO ---- */
+/* ---- CABEÇALHO FORMS ---- */
+#header-forms {
+   display: flex;
+   flex-direction: column;
+}
 
+/* box btn voltar página */
+#box-btn-back {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+}
+
+#box-btn-back button {
+   background-color: transparent;
+   box-shadow: unset;
+   font-weight: var(--font-weight-medium);
+   transition: var(--transition-fast);
+   padding: 0;
+}
+
+#box-btn-back button:hover {
+   opacity: 0.9;
+   transition: var(--transition-fast);
+}
+
+#arrow-back-page {
+   color: var(--primary-color);
+   background-color: var(--secundary-color);
+   border-radius: var(--border-radius-full);
+   width: var(--spacing-8);
+   height: var(--spacing-8);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+/* box btn download pdf */
+#box-btn-pdf {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+   align-items: center;
+}
 
 /* ---- PÁGINA ---- */
+#container-forms {
+   display: flex;
+   flex-direction: row;
+   align-items: start;
+   justify-content: space-between;
+}
 
+/* lista do passo a passo do form wizard */
+#box-sidebar {
+   width: 25%;
+   position: relative;
+}
 
-/* ---- RODAPÉ ----- */
+#list-steps {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-8);
+}
 
+#list-steps li {
+   position: relative;
+   font-weight: var(--font-weight-medium);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: var(--spacing-2);
+   opacity: 0.6;
+   cursor: default;
+}
+
+#list-steps li.activeLi {
+   opacity: 1;
+}
+
+#list-steps li span {
+   border: solid var(--secundary-color) var(--border-width-thin);
+   border-radius: var(--border-radius-full);
+   width: var(--spacing-6);
+   height: var(--spacing-6);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+}
+
+#list-steps li span.activeSpan {
+   color: var(--primary-color);
+   background-color: var(--secundary-color);
+}
+
+/* box do formulario */
+#box-forms-content {
+   width: 75%;
+   position: relative;
+   box-shadow: var(--shadow-lg);
+   border-radius: var(--border-radius-md);
+}
+
+/* cabeçalho do formulário */
+#header-forms-content {
+   width: 100%;
+   position: relative;
+   background: var(--octave-color);
+   padding: var(--spacing-3) var(--spacing-6);
+   border-top-left-radius: var(--border-radius-md);
+   border-top-right-radius: var(--border-radius-md);
+}
+
+#title-header-forms-content {
+   color: var(--primary-color);
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: start;
+   gap: var(--spacing-2);
+}
+
+/* conteudo do forms */
+#forms-content {
+   width: 100%;
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-8);
+   padding: var(--spacing-6);
+}
+
+#description-forms-content {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: start;
+   gap: var(--spacing-2);
+   opacity: 0.8;
+}
+
+/* formulário wizard - data */
+#step-data {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-4);
+}
+
+.box-inputs-data {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: var(--spacing-4);
+}
+
+.box-input-data {
+   width: 50%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-3);
+}
+
+#input-link-portfolio {
+   width: 100%;
+}
+
+/* formulário wizard - experience */
+#step-experience, #step-experience fieldset {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-4);
+}
+
+#step-experience fieldset {
+   border: solid #00000080 var(--border-width-thick);
+   border-radius: var(--border-radius-md);
+   padding: var(--spacing-4);
+}
+
+.box-inputs-experience {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: var(--spacing-4);
+}
+
+.box-input-experience {
+   width: 50%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-3);
+}
+
+#btn-trash-experience {
+   width: 50%;
+   display: flex;
+   flex-direction: row;
+   justify-content: end;
+   align-items: start;
+}
+
+/* formulário wizard - skills */
+#step-skills {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-4);
+}
+
+.box-inputs-skills {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: start;
+   gap: var(--spacing-4);
+}
+
+.box-input-skills {
+   width: 50%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-3);
+}
+
+.box-input-skills textarea {
+   max-width: 100%;
+   height: 150px;
+}
+
+/* formulário wizard - preferences */
+.box-inputs-preferences {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: var(--spacing-6);
+}
+
+.box-inputs-preferences input[type="radio"] {
+   display: none;
+}
+
+.box-inputs-preferences label {
+   padding: var(--spacing-2) var(--spacing-4);
+   border: var(--border-width-thick) solid #00000080;
+   border-radius: var(--border-radius-md);
+   font-weight: var(--font-weight-bold);
+   transition: var(--transition-fast);
+   cursor: pointer;
+}
+
+.box-inputs-preferences input[type="radio"]:checked + label {
+   background-color: var(--quintenary-color);
+   color: var(--primary-color);
+   border-color: var(--quintenary-color);
+}
+
+/* formulário wizard - models */
+.box-inputs-models {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: var(--spacing-6);
+}
+
+.box-inputs-models input[type="radio"] {
+   display: none;
+}
+
+.card-models {
+   width: 45%;
+   padding: var(--spacing-4) var(--spacing-6);
+   border: var(--border-width-thick) solid #00000080;
+   border-radius: var(--border-radius-md);
+   transition: var(--transition-fast);
+   box-shadow: var(--shadow-md);
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-4);
+   cursor: pointer;
+}
+
+.box-inputs-models input[type="radio"]:checked + .card-models {
+   background-color: var(--quintenary-color);
+   color: var(--primary-color);
+   border-color: var(--quintenary-color);
+}
+
+.header-card-models {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: var(--spacing-2);
+}
+
+.type-model-card {
+   font-size: var(--font-size-sm);
+   font-weight: var(--font-weight-medium);
+   opacity: 0.75;
+}
+
+.card-models p {
+   font-weight: var(--font-weight-medium);
+   font-size: var(--font-size-md);
+   line-height: var(--line-height-base);
+   opacity: 0.8;
+}
+
+.category-model-card {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: var(--spacing-4);
+}
+
+.category-model-card span {
+   font-size: var(--font-size-sm);
+   border: solid #00000080 var(--border-width-thick);
+   border-radius: var(--border-radius-full);
+   padding: var(--spacing-1) var(--spacing-4);
+   box-shadow: var(--shadow-md);
+}
+
+/* formulário wizard - preview */
+#box-preview-curriculum {
+   width: 100%;
+   height: 50vh;
+   background-color: #f0f0f0;
+   border: solid var(--secundary-color) var(--border-width-thin);
+   border-radius: var(--border-radius-md);
+}
+
+/* btns proximo step no forms */
+.btns-forms-content {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
 
 /* --------------------
    Responsividade
@@ -19,12 +450,89 @@
 
 /* -------- TABLET -------- */
 @media (max-width: 1024px) {
+   /* formulário wizard - models */
+   .box-inputs-models {
+      justify-content: center;
+   }
 
+   .card-models {
+      width: 75%;
+   }
 }
 
 
 /* -------- MOBILE GRANDE -------- */
 @media (max-width: 768px) {
+   /* ---- CABEÇALHO FORMS ---- */
+   #header-forms {
+      gap: var(--spacing-6);
+   }
+
+   /* ---- PÁGINA ---- */
+   #container-forms {
+      flex-direction: column;
+      gap: var(--spacing-6);
+      padding: var(--spacing-6) var(--spacing-3);;
+   }
+
+   /* lista do passo a passo do form wizard */
+   #box-sidebar {
+      width: 100%;
+   }
+
+   #list-steps {
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+
+   /* box do formulario */
+   #box-forms-content {
+      width: 100%;
+   }
+
+   /* formulário wizard - data */
+   .box-inputs-data {
+      flex-direction: column;
+   }
+
+   .box-input-data {
+      width: 100%;
+   }
+
+   /* formulário wizard - experience */
+   .box-inputs-experience {
+      flex-direction: column;
+   }
+
+   .box-input-experience {
+      width: 100%;
+   }
+
+   #btn-trash-experience {
+      width: 100%;
+   }
+
+   /* formulário wizard - skills */
+   .box-inputs-skills {
+      flex-direction: column;
+   }
+
+   .box-input-skills {
+      width: 100%;
+   }
+
+   /* formulário wizard - preferences */
+   .box-inputs-preferences {
+      justify-content: center;
+   }
+
+   /* formulário wizard - models */
+   .card-models {
+      width: 85%;
+   }
+
+   /* formulário wizard - preview */
 
 }
 
