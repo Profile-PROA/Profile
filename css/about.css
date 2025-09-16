@@ -367,13 +367,11 @@ main {
 
 .titulo {
    font-size: 2.6rem;
-   /* Aumentei a fonte do título */
    font-weight: bold;
 }
 
 .imagem-card {
    width: 200px;
-   /* Aumentei o tamanho da imagem */
    height: 200px;
    margin: 2rem 0;
    object-fit: contain;
@@ -383,7 +381,6 @@ main {
 .descricao {
    font-family: var(--font-family-heading);
    font-size: 1.4rem;
-   /* Fonte maior para descrição */
    margin: 1.5rem 0;
 }
 
