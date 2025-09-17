@@ -139,10 +139,10 @@ main {
    padding: 2rem 0;
 }
 
-.missao_visao_valores h1{
+.missao_visao_valores h1 {
    text-align: center;
-   margin-bottom: 4rem; 
-   font-size: 3.5rem; 
+   margin-bottom: 4rem;
+   font-size: 3.5rem;
 }
 
 
@@ -158,149 +158,149 @@ main {
 
 /* ---- SEÇÃO SLOGAN ---- */
 .secao-slogan {
-    padding: 4rem 0;
-    background: #fff;
-    text-align: center;
+   padding: 4rem 0;
+   background: #fff;
+   text-align: center;
 }
 
 .container-slogan {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 2rem;
+   background: #f8f9fa;
+   border-radius: 20px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .texto-slogan {
-    font-size: 1.8rem;
-    color: #333;
-    font-weight: 600;
-    line-height: 1.4;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   font-size: 1.8rem;
+   color: #333;
+   font-weight: 600;
+   line-height: 1.4;
+   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .destaque-slogan {
-    color: #ff6b35;
-    font-weight: bold;
+   color: #ff6b35;
+   font-weight: bold;
 }
 
 
 /* ---- SEÇÃO EQUIPE ---- */
 .secao-equipe {
-    padding: 5rem 2rem;
-    background: white;
+   padding: 5rem 2rem;
+   background: white;
 }
 
 .container-equipe {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
 }
 
 .titulo-equipe {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1rem;
+   font-size: 2.5rem;
+   color: #333;
+   margin-bottom: 1rem;
 }
 
 .subtitulo-equipe {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
+   font-size: 1.2rem;
+   color: #666;
+   margin-bottom: 3rem;
 }
 
 .carrossel-equipe {
-    position: relative;
-    overflow: hidden;
-    margin: 2rem 0;
+   position: relative;
+   overflow: hidden;
+   margin: 2rem 0;
 }
 
 .container-cards-equipe {
-    display: flex;
-    transition: transform 0.5s ease;
-    gap: 2rem;
+   display: flex;
+   transition: transform 0.5s ease;
+   gap: 2rem;
 }
 
 .card-membro {
-    min-width: 300px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
+   min-width: 300px;
+   background: white;
+   border-radius: 15px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   transition: all 0.3s ease;
 }
 
 .card-membro:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+   transform: translateY(-5px);
+   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .imagem-membro img {
-    min-width: 300px;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   min-width: 300px;
+   height: 350px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .info-membro {
-    padding: 1.5rem;
+   padding: 1.5rem;
 }
 
 .nome-membro {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.5rem;
+   font-size: 1.3rem;
+   font-weight: bold;
+   color: #333;
+   margin-bottom: 0.5rem;
 }
 
 .controles-carrossel {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   margin-top: 2rem;
 }
 
 .botao-carrossel {
-    background: #ff6b35;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   background: #ff6b35;
+   color: white;
+   border: none;
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+   font-size: 1.2rem;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .botao-carrossel:hover {
-    background: #f7931e;
-    transform: scale(1.1);
+   background: #f7931e;
+   transform: scale(1.1);
 }
 
 .indicadores-carrossel {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
+   display: flex;
+   justify-content: center;
+   gap: 0.5rem;
+   margin-top: 1rem;
 }
 
 .indicador {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: all 0.3s ease;
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   background: #ccc;
+   cursor: pointer;
+   transition: all 0.3s ease;
 }
 
 .indicador.ativo {
-    background: #ff6b35;
-    transform: scale(1.2);
+   background: #ff6b35;
+   transform: scale(1.2);
 }
 
 
@@ -384,10 +384,10 @@ main {
    margin: 1.5rem 0;
 }
 
-/* Hover interativo */
 .card:hover::before {
    transform: scale(1.1);
-   opacity: 10%;
+   background-color: rgba(0, 0, 0, 0.6);
+   background-blend-mode: multiply;
 }
 
 .card:hover .conteudo-card {
@@ -413,6 +413,100 @@ main {
    background-image: url(../assets/images/valores.jpg);
 }
 
+
+/*SEÇÃO ---- CONTAINER*/
+.redirecionamento {
+   background: linear-gradient(to bottom, #ffffff 0%, 100%);
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+}
+
+.container-secao {
+   background: rgba(255, 255, 255, 0.95);
+   backdrop-filter: blur(10px);
+   border-radius: 20px;
+   padding: 60px 40px;
+   max-width: 600px;
+   text-align: center;
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-secao:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.titulo-secao {
+   font-size: 2.5rem;
+   font-weight: 700;
+   color: #2d3748;
+   margin-bottom: 20px;
+   background: linear-gradient(135deg, #FA6200, #F09617, #00C48C);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+.texto-secao {
+   font-size: 1.1rem;
+   color: #4a5568;
+   line-height: 1.8;
+   margin-bottom: 40px;
+}
+
+.botao-redirecionar {
+   background: linear-gradient(135deg, #FA6200 0%, #00C48C 100%);
+   color: white;
+   border: none;
+   padding: 16px 32px;
+   font-size: 1.1rem;
+   font-weight: 600;
+   border-radius: 50px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+   position: relative;
+   overflow: hidden;
+}
+
+.botao-redirecionar:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+   transition: left 0.5s;
+}
+
+.botao-redirecionar:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.botao-redirecionar:hover:before {
+   left: 100%;
+}
+
+.botao-redirecionar:active {
+   transform: translateY(0);
+}
+
+.icone {
+   margin-left: 8px;
+   transition: transform 0.3s ease;
+}
+
+.botao-redirecionar:hover .icone {
+   transform: translateX(3px);
+}
+
 /* -------- TABLET -------- */
 @media (max-width: 1024px) {}
 
@@ -421,8 +515,26 @@ main {
 @media (max-width: 768px) {}
 
 .card-membro {
-        min-width: 280px;
-    }
+   min-width: 280px;
+}
+
+.container-secao {
+   padding: 40px 30px;
+   margin: 20px;
+}
+
+.titulo-secao {
+   font-size: 2rem;
+}
+
+.texto-secao {
+   font-size: 1rem;
+}
+
+.botao-redirecionar {
+   padding: 14px 28px;
+   font-size: 1rem;
+}
 
 /* -------- MOBILE -------- */
 @media (max-width: 480px) {}
