@@ -285,7 +285,7 @@ main { padding-bottom: 50px; }
     gap: 15px;
   }
 
-  button {
+  button .button_formulario {
     font-size: 1rem;
     padding: 15px;
   }
@@ -362,7 +362,7 @@ main { padding-bottom: 50px; }
     padding: 10px;
   }
 
-  button {
+  button .button_formulario {
     font-size: 1rem;
     padding: 15px;
   }
@@ -473,7 +473,7 @@ main { padding-bottom: 50px; }
     padding: 8px;
   }
 
-  button {
+  button .button_formulario {
     font-size: 0.9rem;
     padding: 12px;
   }
