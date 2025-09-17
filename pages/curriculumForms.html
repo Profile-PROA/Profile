@@ -16,16 +16,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=lightbulb"/>
 </head>
 <body>
+    <!-- Cabeçalho Forms do currículo -->
     <header id="header-forms">
         <sectiion id="box-btn-back">
-            <button class="btn-forms">
+            <button type="button" class="btn-forms" id="btn-back-page" onclick="history.back()">
                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24" id="arrow-back-page" class="rotate-arrow"></iconify-icon>
                 Voltar ao início
             </button>
         </sectiion>
         
         <sectiion id="box-btn-pdf">
-            <button class="btn-forms btn-forms-orange">
+            <button type="button" class="btn-forms btn-forms-orange btn-forms-disable" disabled aria-disabled="true">
                 <iconify-icon icon="material-symbols:download" width="24" height="24"></iconify-icon>
                 Baixar PDF
             </button>
@@ -71,15 +72,69 @@
         <section id="box-forms-content">
             <header id="header-forms-content">
                 <h2 id="title-header-forms-content">
-                    <iconify-icon icon="mdi:user" width="35" height="35"></iconify-icon>
-                    Dados pessoais
+                    <div class="step-header-content">
+                        <iconify-icon icon="mdi:user" width="35" height="35"></iconify-icon>
+                        Dados pessoais
+                    </div>
+
+                    <div class="step-header-content">
+                        <iconify-icon icon="material-symbols:work" width="35" height="35"></iconify-icon>
+                        Experiência
+                    </div>
+
+                    <div class="step-header-content">
+                        <iconify-icon icon="uil:processor" width="35" height="35"></iconify-icon>
+                        Habilidades
+                    </div>
+
+                    <div class="step-header-content">
+                        <iconify-icon icon="gg:list" width="35" height="35"></iconify-icon>
+                        Preferência
+                    </div>
+
+                    <div class="step-header-content">
+                        <iconify-icon icon="ph:books" width="35" height="35"></iconify-icon>
+                        Modelos
+                    </div>
+
+                    <div class="step-header-content">
+                        <iconify-icon icon="weui:eyes-on-outlined" width="35" height="35"></iconify-icon>
+                        Preview
+                    </div>
                 </h2>
             </header>
             
             <section id="forms-content">
                 <p id="description-forms-content">
-                    <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
-                    Informações fundamentais para contato
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Informações fundamentais para contato
+                    </span>
+
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Informações fundamentais para mostrar experiência
+                    </span>
+
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Informações fundamentais para mostrar habilidades
+                    </span>
+
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Informações fundamentais para o objetivo do currículo
+                    </span>
+
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Modelo base do currículo
+                    </span>
+
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Preview do currículo
+                    </span>
                 </p>
 
                 <form id="form-wizard">
@@ -129,12 +184,12 @@
                         </div>
 
                         <div class="btns-forms-content">
-                            <button class="btn-forms btn-forms-gray" disabled>
+                            <button type="button" class="btn-forms btn-forms-gray btn-forms-disable btn-prev" disabled aria-disabled="true">
                                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
                                 Voltar
                             </button>
 
-                            <button class="btn-forms btn-forms-orange">
+                            <button type="button" class="btn-forms btn-forms-orange btn-next">
                                 Próximo
                                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
                             </button>
@@ -174,8 +229,8 @@
                                     <input type="text" id="resultados" name="resultados" class="input-curriculum" placeholder="Ex.: +20% eficiência...">
                                 </div>
 
-                                <div id="btn-trash-experience">
-                                    <button class="btn-forms btn-forms-gray">
+                                <div class="btn-trash-experience">
+                                    <button class="btn-forms btn-forms-gray btn-forms-disable" disabled aria-disabled="true">
                                         <iconify-icon icon="iconamoon:trash" width="24" height="24"></iconify-icon>
                                     </button>
                                 </div>
@@ -183,18 +238,18 @@
                         </fieldset>
 
                         <div id="btn-add-experience">
-                            <button class="btn-forms btn-forms-gray">
+                            <button type="button" class="btn-forms btn-forms-gray">
                                 + Adicionar experiência
                             </button>
                         </div>
 
                         <div class="btns-forms-content">
-                            <button class="btn-forms btn-forms-gray" disabled>
+                            <button type="button" class="btn-forms btn-forms-gray btn-prev">
                                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
                                 Voltar
                             </button>
 
-                            <button class="btn-forms btn-forms-orange">
+                            <button type="button" class="btn-forms btn-forms-orange btn-next">
                                 Próximo
                                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
                             </button>
@@ -216,12 +271,12 @@
                         </div>
 
                         <div class="btns-forms-content">
-                            <button class="btn-forms btn-forms-gray" disabled>
+                            <button class="btn-forms btn-forms-gray btn-prev btn-prev">
                                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
                                 Voltar
                             </button>
 
-                            <button class="btn-forms btn-forms-orange">
+                            <button class="btn-forms btn-forms-orange btn-next">
                                 Próximo
                                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
                             </button>
@@ -230,125 +285,136 @@
 
                     <!-- Etapa 4: Preferência -->
                     <div id="step-preferences" class="step">
-                        <div class="box-inputs-preferences">
-                            <input type="radio" id="bigTech" name="preference" value="Big Tech" checked>
-                            <label for="bigTech">Big Tech</label>
-
-                            <input type="radio" id="startup" name="preference" value="Startup">
-                            <label for="startup">Startup</label>
-
-                            <input type="radio" id="tradicional" name="preference" value="Tradicional">
-                            <label for="tradicional">Tradicional</label>
-
-                            <input type="radio" id="ats" name="preference" value="ATS-Friendly">
-                            <label for="ats">ATS-Friendly</label>
-                        </div>
-
-                        <div class="btns-forms-content">
-                            <button class="btn-forms btn-forms-gray" disabled>
-                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
-                                Voltar
-                            </button>
-
-                            <button class="btn-forms btn-forms-orange">
-                                Próximo
-                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
-                            </button>
+                        <div id="box-preferences">
+                            <div class="box-inputs-preferences">
+                                <input type="radio" id="bigTech" name="preference" value="Big Tech" checked>
+                                <label for="bigTech">Big Tech</label>
+    
+                                <input type="radio" id="startup" name="preference" value="Startup">
+                                <label for="startup">Startup</label>
+    
+                                <input type="radio" id="tradicional" name="preference" value="Tradicional">
+                                <label for="tradicional">Tradicional</label>
+    
+                                <input type="radio" id="ats" name="preference" value="ATS-Friendly">
+                                <label for="ats">ATS-Friendly</label>
+                            </div>
+    
+                            <div class="btns-forms-content">
+                                <button class="btn-forms btn-forms-orange btn-next">
+                                    Continuar
+                                    <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Etapa 5: Modelos -->
                     <div id="step-models" class="step">
-                        <div class="box-inputs-models">
-                            <input type="radio" id="cleanTech" name="models" value="cleanTech" checked>
-                            <label for="cleanTech" class="card-models">
-                                <div class="header-card-models">
-                                    <iconify-icon icon="material-symbols:docs-outline" width="30" height="30"></iconify-icon>
-                                    <h3>CleanTech</h3>
-                                </div> 
-                                
-                                <span class="type-model-card">Big Tech</span>
-
-                                <p>Layout limpo com foco em métricas e resultados.</p>
-                                
-                                <div class="category-model-card">
-                                    <span>ATS</span>
-                                    <span>Minimalista</span>
-                                </div>
-                            </label>
-
-
-                            <input type="radio" id="startupSpark" name="models" value="startupSpark">
-                            <label for="startupSpark" class="card-models">
-                                <div class="header-card-models">
-                                    <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
-                                    <h3>StartupSpark</h3>
-                                </div> 
-                                
-                                <span class="type-model-card">Startup</span>
-
-                                <p>Mais cor e hierarquia curta para leitura rápida.</p>
-                                
-                                <div class="category-model-card">
-                                    <span>Criativo</span>
-                                    <span>Impacto visual</span>
-                                </div>
-                            </label>
-
-
-                            <input type="radio" id="classicPro" name="models" value="classicPro">
-                            <label for="classicPro" class="card-models">
-                                <div class="header-card-models">
-                                    <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
-                                    <h3>ClassicPro</h3>
-                                </div> 
-                                
-                                <span class="type-model-card">Tradicional</span>
-
-                                <p>Estrutura clássica priorizando histórico.</p>
-                                
-                                <div class="category-model-card">
-                                    <span>Formal</span>
-                                </div>
-                            </label>
-
-
-                            <input type="radio" id="atsPlain" name="models" value="atsPlain">
-                            <label for="atsPlain" class="card-models">
-                                <div class="header-card-models">
-                                    <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
-                                    <h3>ATS Plain</h3>
-                                </div> 
-                                
-                                <span class="type-model-card">ATS-Friendly</span>
-
-                                <p>Sem elementos gráficos, ideal para triagem automática.</p>
-                                
-                                <div class="category-model-card">
-                                    <span>Texto puro</span>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div class="btns-forms-content">
-                            <button class="btn-forms btn-forms-orange">
-                                Continuar
-                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
-                            </button>
+                        <div id="box-models">
+                            <div class="box-inputs-models">
+                                <input type="radio" id="cleanTech" name="models" value="cleanTech" checked>
+                                <label for="cleanTech" class="card-models">
+                                    <div class="header-card-models">
+                                        <iconify-icon icon="material-symbols:docs-outline" width="30" height="30"></iconify-icon>
+                                        <h3>CleanTech</h3>
+                                    </div> 
+                                    
+                                    <span class="type-model-card">Big Tech</span>
+    
+                                    <p>Layout limpo com foco em métricas e resultados.</p>
+                                    
+                                    <div class="category-model-card">
+                                        <span>ATS</span>
+                                        <span>Minimalista</span>
+                                    </div>
+                                </label>
+    
+    
+                                <input type="radio" id="startupSpark" name="models" value="startupSpark">
+                                <label for="startupSpark" class="card-models">
+                                    <div class="header-card-models">
+                                        <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                        <h3>StartupSpark</h3>
+                                    </div> 
+                                    
+                                    <span class="type-model-card">Startup</span>
+    
+                                    <p>Mais cor e hierarquia curta para leitura rápida.</p>
+                                    
+                                    <div class="category-model-card">
+                                        <span>Criativo</span>
+                                        <span>Impacto visual</span>
+                                    </div>
+                                </label>
+    
+    
+                                <input type="radio" id="classicPro" name="models" value="classicPro">
+                                <label for="classicPro" class="card-models">
+                                    <div class="header-card-models">
+                                        <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                        <h3>ClassicPro</h3>
+                                    </div> 
+                                    
+                                    <span class="type-model-card">Tradicional</span>
+    
+                                    <p>Estrutura clássica priorizando histórico.</p>
+                                    
+                                    <div class="category-model-card">
+                                        <span>Formal</span>
+                                    </div>
+                                </label>
+    
+    
+                                <input type="radio" id="atsPlain" name="models" value="atsPlain">
+                                <label for="atsPlain" class="card-models">
+                                    <div class="header-card-models">
+                                        <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                        <h3>ATS Plain</h3>
+                                    </div> 
+                                    
+                                    <span class="type-model-card">ATS-Friendly</span>
+    
+                                    <p>Sem elementos gráficos, ideal para triagem automática.</p>
+                                    
+                                    <div class="category-model-card">
+                                        <span>Texto puro</span>
+                                    </div>
+                                </label>
+                            </div>
+    
+                            <div class="btns-forms-content">
+                                <button type="button" class="btn-forms btn-forms-gray btn-prev">
+                                    <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                    Retornar às preferências
+                                </button>
+    
+                                <button type="button" class="btn-forms btn-forms-orange btn-next">
+                                    Continuar
+                                    <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Etapa 6: Preview -->
                     <div id="step-preview" class="step">
-                        <div id="box-preview-curriculum">
-
-                        </div>
-
-                        <div class="btns-forms-content">
-                            <button class="btn-forms btn-forms-gray" disabled>
-                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
-                                Voltar aos modelos
-                            </button>
+                        <div id="box-preview">
+                            <div id="box-preview-curriculum">
+    
+                            </div>
+    
+                            <div class="btns-forms-content">
+                                <button type="button" class="btn-forms btn-forms-gray btn-prev">
+                                    <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                    Retornar aos modelos
+                                </button>
+                                
+                                <a href="../index.html" type="button" class="btn-forms btn-forms-orange">
+                                    <iconify-icon icon="lets-icons:flag-finish-alt" width="24" height="24"></iconify-icon>
+                                    Finalizar
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -375,8 +441,11 @@
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 
+<!-- Adiciona a lib de máscara -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.6.1/imask.min.js"></script>
+
 <!-- JS Form Wizard -->
-<script src="../js/formWizard.js" defer></script>
+<script src="../js/formWizard.js"></script>
 
 <!-- Link para Icones do Iconify -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
