@@ -33,13 +33,12 @@ main {
    left: 0;
    width: 100%;
    height: 100%;
-   background: url(/assets/images/background_sobre\ nós.png);
+   background: url(../assets/images/background_sobre_nos.png);
    background-size: cover;
    display: flex;
    align-items: center;
    justify-content: center;
    font-size: 2rem;
-   color: #666;
    z-index: -1;
 }
 
@@ -121,7 +120,7 @@ main {
 }
 
 .imagem-sobre {
-   background: url(/assets/images/de_onde_viemos.png);
+   background: url(../assets/images/de_onde_viemos.png);
    background-size: cover;
    background-position: center;
    height: 400px;
@@ -368,13 +367,11 @@ main {
 
 .titulo {
    font-size: 2.6rem;
-   /* Aumentei a fonte do título */
    font-weight: bold;
 }
 
 .imagem-card {
    width: 200px;
-   /* Aumentei o tamanho da imagem */
    height: 200px;
    margin: 2rem 0;
    object-fit: contain;
@@ -384,13 +381,13 @@ main {
 .descricao {
    font-family: var(--font-family-heading);
    font-size: 1.4rem;
-   /* Fonte maior para descrição */
    margin: 1.5rem 0;
 }
 
 /* Hover interativo */
 .card:hover::before {
    transform: scale(1.1);
+   opacity: 10%;
 }
 
 .card:hover .conteudo-card {
@@ -405,15 +402,15 @@ main {
 
 /* Imagens de fundo */
 .card:nth-child(1)::before {
-   background-image: url(/assets/images/missão.jpg);
+   background-image: url(../assets/images/missão.jpg);
 }
 
 .card:nth-child(2)::before {
-   background-image: url(/assets/images/visão.jpg);
+   background-image: url(../assets/images/visão.jpg);
 }
 
 .card:nth-child(3)::before {
-   background-image: url(/assets/images/valores.jpg);
+   background-image: url(../assets/images/valores.jpg);
 }
 
 /* -------- TABLET -------- */
