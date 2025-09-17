@@ -74,7 +74,7 @@ body{
 }
 
 form {
-  max-width: 95%;
+  max-width: 90%;
   margin: 0 auto 40px;
   background-color: #fff;
   padding: 30px 40px;
@@ -123,13 +123,13 @@ button .button_formulario{
   cursor: pointer;
 }
 
-button:hover {
+button .button_formulario:hover {
   background: linear-gradient(to right, #e55b00, #ff7700);
 }
 
 /* --------- contato ----------- */
 .contato_info {
-  max-width: 95%;
+  max-width: 90%;
   margin: 40px auto;
   background: #fff;
   padding: 30px 40px;
@@ -176,7 +176,7 @@ button:hover {
 
 /* ---- perguntas frequentes ---- */
 .perguntas_frequentes {
-  max-width: 95%;
+  max-width: 90%;
   margin: 60px auto;
   margin-top: 80px;
   padding: 50px;
