@@ -19,7 +19,7 @@
     <!-- Cabeçalho Forms do currículo -->
     <header id="header-forms">
         <sectiion id="box-btn-back">
-            <button type="button" class="btn-forms" id="btn-back-page" onclick="history.back()">
+            <button type="button" class="btn-forms" id="btn-back-page" onclick="history.length > 1 ? history.back() : window.location.href='../index.html'">
                 <iconify-icon icon="weui:arrow-outlined" width="12" height="24" id="arrow-back-page" class="rotate-arrow"></iconify-icon>
                 Voltar ao início
             </button>
@@ -142,20 +142,20 @@
                     <div id="step-data" class="step">
                         <div class="box-inputs-data">
                             <div class="box-input-data">
-                                <label for="fullName">Nome completo:</label>
-                                <input type="text" id="fullName" name="fullName" class="input-curriculum" placeholder="Digite seu nome completo...">
+                                <label for="fullName">Nome completo: *</label>
+                                <input type="text" id="fullName" name="fullName" class="input-curriculum" placeholder="Digite seu nome completo..." required>
                             </div>
 
                             <div class="box-input-data">
-                                <label for="email">E-mail:</label>
-                                <input type="email" id="email" name="email" class="input-curriculum" placeholder="Digite seu e-mail...">
+                                <label for="email">E-mail: *</label>
+                                <input type="email" id="email" name="email" class="input-curriculum" placeholder="Digite seu e-mail..." required>
                             </div>
                         </div>
 
                         <div class="box-inputs-data">
                             <div class="box-input-data">
-                                <label for="phone">Telefone:</label>
-                                <input type="text" id="phone" name="phone" class="input-curriculum" placeholder="Digite seu telefone (11) 99999-9999...">
+                                <label for="phone">Telefone: *</label>
+                                <input type="text" id="phone" name="phone" class="input-curriculum" placeholder="Digite seu telefone (11) 99999-9999..." required>
                             </div>
 
                             <div class="box-input-data">
@@ -166,13 +166,13 @@
                         
                         <div class="box-inputs-data">
                             <div class="box-input-data">
-                                <label for="state">Estado:</label>
-                                <input type="text" id="state" name="state" class="input-curriculum" placeholder="Digite o estado que você mora...">
+                                <label for="state">Estado: *</label>
+                                <input type="text" id="state" name="state" class="input-curriculum" placeholder="Digite o estado que você mora..." required>
                             </div>
 
                             <div class="box-input-data">
-                                <label for="city">Cidade:</label>
-                                <input type="text" id="city" name="city" class="input-curriculum" placeholder="Digite a cidade que você mora...">
+                                <label for="city">Cidade: *</label>
+                                <input type="text" id="city" name="city" class="input-curriculum" placeholder="Digite a cidade que você mora..." required>
                             </div>
                         </div>
                         
@@ -198,44 +198,46 @@
 
                     <!-- Etapa 2: Experiência -->
                     <div id="step-experience" class="step">
-                        <fieldset>
-                            <div class="box-inputs-experience">
-                                <div class="box-input-experience">
-                                    <label for="cargo">Cargo:</label>
-                                    <input type="text" id="cargo" name="cargo" class="input-curriculum" placeholder="Digite o cargo ocupado...">
+                        <div id="box-list-experiences">
+                            <fieldset class="box-fieldset-experience">
+                                <div class="box-inputs-experience">
+                                    <div class="box-input-experience">
+                                        <label for="cargo">Cargo:</label>
+                                        <input type="text" id="cargo" name="cargo" class="input-curriculum" placeholder="Digite o cargo ocupado...">
+                                    </div>
+    
+                                    <div class="box-input-experience">
+                                        <label for="empresa">Empresa:</label>
+                                        <input type="text" id="empresa" name="empresa" class="input-curriculum" placeholder="Digite o nome da empresa...">
+                                    </div>
                                 </div>
-
-                                <div class="box-input-experience">
-                                    <label for="empresa">Empresa:</label>
-                                    <input type="text" id="empresa" name="empresa" class="input-curriculum" placeholder="Digite o nome da empresa...">
+    
+                                <div class="box-inputs-experience">
+                                    <div class="box-input-experience">
+                                        <label for="periodo">Período:</label>
+                                        <input type="text" id="periodo" name="periodo" class="input-curriculum" placeholder="Ex.: mar. 2024 - fev, 2025">
+                                    </div>
+    
+                                    <div class="box-input-experience">
+                                        <label for="atividades">Atividades:</label>
+                                        <input type="text" id="atividades" name="atividades" class="input-curriculum" placeholder="Principais atividades...">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="box-inputs-experience">
-                                <div class="box-input-experience">
-                                    <label for="periodo">Período:</label>
-                                    <input type="text" id="periodo" name="periodo" class="input-curriculum" placeholder="Ex.: mar. 2024 - fev, 2025">
+    
+                                <div class="box-inputs-experience">
+                                    <div class="box-input-experience">
+                                        <label for="resultados">Resultados:</label>
+                                        <input type="text" id="resultados" name="resultados" class="input-curriculum" placeholder="Ex.: +20% eficiência...">
+                                    </div>
+    
+                                    <div class="btn-trash-experience" id="btn-trash-experience">
+                                        <button class="btn-forms btn-forms-orange btn-forms-disable" disabled aria-disabled="true">
+                                            <iconify-icon icon="iconamoon:trash" width="24" height="24"></iconify-icon>
+                                        </button>
+                                    </div>
                                 </div>
-
-                                <div class="box-input-experience">
-                                    <label for="atividades">Atividades:</label>
-                                    <input type="text" id="atividades" name="atividades" class="input-curriculum" placeholder="Principais atividades...">
-                                </div>
-                            </div>
-
-                            <div class="box-inputs-experience">
-                                <div class="box-input-experience">
-                                    <label for="resultados">Resultados:</label>
-                                    <input type="text" id="resultados" name="resultados" class="input-curriculum" placeholder="Ex.: +20% eficiência...">
-                                </div>
-
-                                <div class="btn-trash-experience">
-                                    <button class="btn-forms btn-forms-gray btn-forms-disable" disabled aria-disabled="true">
-                                        <iconify-icon icon="iconamoon:trash" width="24" height="24"></iconify-icon>
-                                    </button>
-                                </div>
-                            </div>
-                        </fieldset>
+                            </fieldset>
+                        </div>
 
                         <div id="btn-add-experience">
                             <button type="button" class="btn-forms btn-forms-gray">
@@ -260,13 +262,13 @@
                     <div id="step-skills" class="step">
                         <div class="box-inputs-skills">
                             <div class="box-input-skills">
-                                <label for="Techniques">Técnicas:</label>
-                                <textarea id="Techniques" name="Techniques" class="input-curriculum" placeholder="Ex.: React, Node.js, Tailwind, SQL..."></textarea>
+                                <label for="Techniques">Técnicas: *</label>
+                                <textarea id="Techniques" name="Techniques" class="input-curriculum" placeholder="Ex.: React, Node.js, Tailwind, SQL..." required></textarea>
                             </div>
 
                             <div class="box-input-skills">
-                                <label for="Interpersonal">Interpessoais:</label>
-                                <textarea id="Interpersonal" name="Interpersonal" class="input-curriculum" placeholder="Ex.: Comunicação, Proatividade..."></textarea>
+                                <label for="Interpersonal">Interpessoais: *</label>
+                                <textarea id="Interpersonal" name="Interpersonal" class="input-curriculum" placeholder="Ex.: Comunicação, Proatividade..." required></textarea>
                             </div>
                         </div>
 
@@ -443,6 +445,12 @@
 
 <!-- Adiciona a lib de máscara -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.6.1/imask.min.js"></script>
+
+<!-- JS Classe StepFormWizard -->
+<script src="../js/StepFormWizard.js"></script>
+
+<!-- JS Classe ExperienceManager -->
+<script src="../js/ExperienceManager.js"></script>
 
 <!-- JS Form Wizard -->
 <script src="../js/formWizard.js"></script>

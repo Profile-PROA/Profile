@@ -1,5 +1,6 @@
-// Formulário wizard
+// Classe formulário wizard
 class StepFormWizard {
+    // Construtor da classe
     constructor(steps, btnNext, btnPrev, btnBackPage, sidebarSpans, stepsHeader, stepsDescription) {
         this.steps = document.querySelectorAll(steps)
         this.stepsHeader = document.querySelectorAll(stepsHeader)
@@ -12,6 +13,41 @@ class StepFormWizard {
         this.currentStep = 0
     }
 
+    // Inicializa interatividade
+    init() {
+        if (this.steps) {
+            this.showStep(this.currentStep)
+        }
+
+        // Avançar
+        this.btnNext.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                if (this.validateStep(this.currentStep)) {
+                    if (this.currentStep < this.steps.length - 1) {
+                        this.currentStep++;
+                        this.showStep(this.currentStep);
+                    }
+                }
+            });
+        });
+
+        // Voltar
+        this.btnPrev.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (this.currentStep > 0) {
+                    this.currentStep--;
+                    this.showStep(this.currentStep);
+                }
+            });
+        });
+
+        return this;
+    }
+
+    // Controle do forms wizard
     showStep(index) {
         // Percorrer/controlar
         this.steps.forEach((step, i) => {
@@ -51,38 +87,27 @@ class StepFormWizard {
         }
     }
 
-    init() {
-        if (this.steps) {
-            this.showStep(this.currentStep)
-        }
+    // Validação dos inputs se estão vazios
+    validateStep(index) {
+        let isValid = true;
 
-        // Avançar
-        this.btnNext.forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                if (this.currentStep < this.steps.length - 1) {
-                    this.currentStep++;
-                    this.showStep(this.currentStep);
-                }
-            });
+        const inputs = this.steps[index].querySelectorAll("input[required], textarea[required]");
+
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.classList.add("input-error");
+                isValid = false;
+            } else {
+                input.classList.remove("input-error");
+            }
         });
 
-        // Voltar
-        this.btnPrev.forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                if (this.currentStep > 0) {
-                    this.currentStep--;
-                    this.showStep(this.currentStep);
-                }
-            });
-        });
-
-        return this;
+        return isValid;
     }
 }
 
-const formWizard = new StepFormWizard(
+// Instância da classe <StepFormWizard>
+const formWizard = new StepFormWizard (
   ".step",
   ".btn-next",
   ".btn-prev",
@@ -92,27 +117,10 @@ const formWizard = new StepFormWizard(
   ".step-description-content",
 );
 
+// Chamando metodo init
 formWizard.init();
 
-// Mascara para o input phone e perido na empresa
+// Mascara para o input phone na parte dados pessoais
 IMask(document.getElementById("phone"), {
     mask: '(00) 00000-0000'
-});
-
-const container = document.getElementById("step-experience");
-const btnAdd = document.querySelector("#btn-add-experience button");
-
-btnAdd.addEventListener("click", () => {
-    console.log("aaa")
-  // Pega o primeiro bloco de experiência
-  const firstItem = container.querySelector("fieldset");
-  
-  // Clona o bloco
-  const newItem = firstItem.cloneNode(true);
-
-  // Limpa os valores dos inputs
-  newItem.querySelectorAll("input").forEach(input => input.value = "");
-
-  // Adiciona ao container
-  container.appendChild(newItem);
 });

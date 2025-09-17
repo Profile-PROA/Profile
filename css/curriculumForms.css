@@ -67,11 +67,15 @@
    outline: unset;
 }
 
+.input-error {
+   border: var(--border-width-thick) solid #ff0000;
+   background-color: #ffe6e6;
+}
+
 /* detalhes para icones */
 .rotate-arrow {
    transform: rotate(180deg);
 }
-
 
 /* ---- CABEÇALHO FORMS ---- */
 #header-forms {
@@ -264,7 +268,7 @@
 }
 
 /* formulário wizard - experience */
-#step-experience, #step-experience fieldset {
+#step-experience, .box-fieldset-experience {
    width: 100%;
    position: relative;
    display: flex;
@@ -272,7 +276,15 @@
    gap: var(--spacing-4);
 }
 
-#step-experience fieldset {
+#box-list-experiences {
+   width: 100%;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-8);
+}
+
+.box-fieldset-experience {
    border: solid #00000080 var(--border-width-thick);
    border-radius: var(--border-radius-md);
    padding: var(--spacing-4);
@@ -301,6 +313,10 @@
    flex-direction: row;
    justify-content: end;
    align-items: start;
+}
+
+#box-list-experiences fieldset:first-child .btn-trash-experience {
+    display: none;
 }
 
 /* formulário wizard - skills */
@@ -547,7 +563,7 @@
       width: 100%;
    }
 
-   #btn-trash-experience {
+   .btn-trash-experience {
       width: 100%;
    }
 
@@ -569,13 +585,4 @@
    .card-models {
       width: 85%;
    }
-
-   /* formulário wizard - preview */
-
-}
-
-
-/* -------- MOBILE -------- */
-@media (max-width: 480px) {
-
 }
