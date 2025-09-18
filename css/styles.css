@@ -8,6 +8,17 @@
    box-sizing: border-box;
 }
 
+.antes-animacao {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.animar-entrada {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
 body {
    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
    line-height: 1.6;
@@ -195,6 +206,11 @@ section {
    text-align: center;
    border-top: 1px solid #e9ecef;
    border-bottom: 1px solid #e9ecef;
+   transition: background 0.3s ease;
+}
+
+.empresas-section:hover {
+   background: #ffffff; /* destaque sutil quando passa o mouse */
 }
 
 .empresas-content {
@@ -209,10 +225,14 @@ section {
 
 .empresas-text {
    font-size: 16px;
-   color: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
-   font-weight: 400;
+   font-weight: 600;
    margin-right: 20px;
    white-space: nowrap;
+   background: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   text-fill-color: transparent;
 }
 
 .empresas-logos {
@@ -223,23 +243,69 @@ section {
    justify-content: center;
 }
 
-.logo-placeholder {
+.logo-placeholder#google {
    width: 120px;
-   height: 60px;
-   background: #ffffff;
-   border: 2px dashed #dee2e6;
+   height: 100px;
+   background-image: url(../assets/icons/google.png);
+   background-size: cover;
    border-radius: 8px;
    display: flex;
    align-items: center;
-   justify-content: center;
-   color: #adb5bd;
+   font-size: 12px;
+   transition: all 0.3s ease;
+}
+
+.logo-placeholder#inter {
+   width: 120px;
+   height: 100px;
+   background-image: url(../assets/icons/inter.png);
+   background-size: cover;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   font-size: 12px;
+   transition: all 0.3s ease;
+}
+
+.logo-placeholder#oracle {
+   width: 120px;
+   height: 100px;
+   background-image: url(../assets/icons/oracle.png);
+   background-size: cover;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   font-size: 12px;
+   transition: all 0.3s ease;
+}
+
+.logo-placeholder#master {
+   width: 120px;
+   height: 100px;
+   background-image: url(../assets/icons/master.png);
+   background-size: cover;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   font-size: 12px;
+   transition: all 0.3s ease;
+}
+
+.logo-placeholder#itau {
+   width: 120px;
+   height: 100px;
+   background-image: url(../assets/icons/itau.png);
+   background-size: cover;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
    font-size: 12px;
    transition: all 0.3s ease;
 }
 
 .logo-placeholder:hover {
-   border-color: #6c757d;
-   background: #f8f9fa;
+   transform: scale(1.08);
+   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 
@@ -977,34 +1043,56 @@ section {
    }
 }
 
-/* --------------------
-   Responsividade
---------------------- */
-
 /* -------- TABLET -------- */
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+   .principal-home h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+   }
 
+   .principal-home p {
+      font-size: 1.1rem;
+   }
+
+   .links-navegacao {
+      gap: 1.5rem;
+   }
+
+   .container-passos {
+      gap: 30px;
+   }
+}
 
 /* -------- MOBILE GRANDE -------- */
 @media (max-width: 768px) {
    section {
-      padding: 60px 5%;
+      padding: 50px 5%;
    }
 
    .container {
       padding: 0 0.5rem;
    }
 
+   /* Menu responsivo */
    .links-navegacao {
-      display: none;
+      display: none; /* trocar futuramente por menu hamburguer */
    }
 
    .navegacao {
-      padding: 1rem 3%;
+      padding: 0.8rem 5%;
    }
 
-   .servicos h2 {
-      font-size: 2.5rem;
+   .principal-home {
+      text-align: center;
+      padding: 0 1rem;
+   }
+
+   .principal-home h1 {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+   }
+
+   .principal-home p {
+      margin: 0 auto 2rem;
+      font-size: 1rem;
    }
 
    .grade-servicos {
@@ -1012,7 +1100,7 @@ section {
    }
 
    .cartao-servico {
-      padding: 2rem;
+      padding: 1.8rem;
    }
 
    .grade-sobre {
@@ -1021,49 +1109,68 @@ section {
    }
 
    .texto-sobre h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
    }
 
    .imagem-sobre {
-      height: 300px;
+      min-height: 250px;
    }
 
    .depoimentos h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
    }
 
    .depoimento {
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-   }
-
-   .depoimento::before {
-      left: 20px;
-      font-size: 3rem;
+      padding: 1.5rem;
    }
 
    .depoimento p {
-      font-size: 1.1rem;
+      font-size: 1rem;
    }
 
    .grade-modelos {
       grid-template-columns: 1fr;
    }
+
+   .cartao-modelo {
+      padding: 20px;
+   }
+
+   .cartao-servico#imagem1,
+   .cartao-servico#imagem2 {
+      min-height: 200px;
+      padding: 1.5rem;
+      background-size: cover;
+      background-position: center;
+   }
 }
 
-/* -------- MOBILE -------- */
+/* -------- MOBILE PEQUENO -------- */
 @media (max-width: 390px) {
-   .botao-cta{
-      font-size: 15px;
+   .botao-cta {
+      font-size: 14px;
+      padding: 12px 25px;
    }
 
-   .cartao-servico#imagem1 {
-      height: 239px;
-      padding: 2rem;
+   .principal-home h1 {
+      font-size: clamp(1.8rem, 9vw, 2.5rem);
    }
 
+   .principal-home p {
+      font-size: 0.95rem;
+   }
+
+   .cartao-servico#imagem1,
    .cartao-servico#imagem2 {
-      height: 239px;
-      padding: 2rem;
+      min-height: 180px;
+      padding: 1rem;
+   }
+
+   .titulo-principal {
+      font-size: 2rem;
+   }
+
+   .titulo-modelo {
+      font-size: 1.1rem;
    }
 }

@@ -1,4 +1,6 @@
-// Cabeçalho responsivo
+/* ============================
+   MENU MOBILE RESPONSIVO
+============================ */
 class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
@@ -45,7 +47,6 @@ class MobileNavbar {
       this.addClickEvent();
       this.addResizeEvent();
     }
-
     return this;
   }
 }
@@ -53,24 +54,27 @@ class MobileNavbar {
 const mobileNavbar = new MobileNavbar(
   ".btn-mobile",
   "#box-nav-reponsive",
-  "#box-nav-reponsive ul li",
+  "#box-nav-reponsive ul li"
 );
-
 mobileNavbar.init();
 
-// Cabeçalho fixo no topo com efeito
+/* ============================
+   CABEÇALHO FIXO NO TOPO
+============================ */
 window.addEventListener("scroll", () => {
   const navMobile = document.getElementById("box-nav-reponsive");
   const header = document.getElementById("header-site");
 
   header.classList.toggle("header-fixed-top", window.scrollY > 0);
-  navMobile.classList.toggle("nav-fix", window.scrollY > 0)
+  navMobile.classList.toggle("nav-fix", window.scrollY > 0);
 });
 
-// Efeito de digitação para a Seção Principal
+/* ============================
+   EFEITO DE DIGITAÇÃO
+============================ */
 function efeitoDigitacao(elemento, texto, velocidade = 50) {
   let i = 0;
-  elemento.textContent = '';
+  elemento.textContent = "";
 
   function digitar() {
     if (i < texto.length) {
@@ -83,9 +87,8 @@ function efeitoDigitacao(elemento, texto, velocidade = 50) {
   digitar();
 }
 
-// Ativar efeito quando a página carregar
-window.addEventListener('load', () => {
-  const tituloHeroi = document.querySelector('.principal-home h1');
+window.addEventListener("load", () => {
+  const tituloHeroi = document.querySelector(".principal-home h1");
   const textoOriginal = tituloHeroi.textContent;
 
   setTimeout(() => {
@@ -93,140 +96,92 @@ window.addEventListener('load', () => {
   }, 500);
 });
 
-// Animação escalonada para cartões de serviço
-const opcoes_observador = {
+/* ============================
+   ANIMAÇÃO GLOBAL COM OBSERVER
+============================ */
+const opcoesObserver = {
   threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
+  rootMargin: "0px 0px -50px 0px",
 };
 
 const observador = new IntersectionObserver((entradas) => {
-  entradas.forEach(entrada => {
+  entradas.forEach((entrada) => {
     if (entrada.isIntersecting) {
-      entrada.target.style.opacity = '1';
-      entrada.target.style.transform = 'translateY(0)';
+      entrada.target.classList.add("animar-entrada");
+      observador.unobserve(entrada.target); // só anima uma vez
     }
   });
-}, opcoes_observador);
+}, opcoesObserver);
 
-// Configurar animações dos cartões
-document.addEventListener('DOMContentLoaded', () => {
-  const cartoes = document.querySelectorAll('.cartao-servico');
-
-  cartoes.forEach((cartao, indice) => {
-    // Estado inicial
-    cartao.style.opacity = '0';
-    cartao.style.transform = 'translateY(30px)';
-    cartao.style.transition = `opacity 0.6s ease ${indice * 0.1}s, transform 0.6s ease ${indice * 0.1}s`;
-
-    // Observar cartão
-    observador.observe(cartao);
-  });
-
-  // Animação do título
-  const titulo = document.querySelector('.servicos h2');
-  titulo.style.opacity = '0';
-  titulo.style.transform = 'translateY(-30px)';
-  titulo.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-
-  setTimeout(() => {
-    titulo.style.opacity = '1';
-    titulo.style.transform = 'translateY(0)';
-  }, 100);
+// Adicionar estado inicial a todos os elementos que terão animação
+document.querySelectorAll(
+  "section, h1, h2, h3, p, img, .cartao-servico, .cartao-modelo, .depoimento, .botao-cta"
+).forEach((el) => {
+  el.classList.add("antes-animacao");
+  observador.observe(el);
 });
 
-
-
-// Sistema de carrossel simples para depoimentos
+/* ============================
+   CARROSSEL DE DEPOIMENTOS
+============================ */
 let depoimentoAtivo = 0;
-const depoimentos = document.querySelectorAll('.depoimento');
+const depoimentos = document.querySelectorAll(".depoimento");
 const totalDepoimentos = depoimentos.length;
 
-// Inicializar depoimentos (mostrar apenas o primeiro)
 function inicializarDepoimentos() {
   depoimentos.forEach((depoimento, indice) => {
     if (indice === 0) {
-      depoimento.style.display = 'block';
-      depoimento.style.opacity = '1';
-      depoimento.style.transform = 'translateX(0)';
+      depoimento.style.display = "block";
+      depoimento.style.opacity = "1";
+      depoimento.style.transform = "translateX(0)";
     } else {
-      depoimento.style.display = 'none';
-      depoimento.style.opacity = '0';
-      depoimento.style.transform = 'translateX(50px)';
+      depoimento.style.display = "none";
+      depoimento.style.opacity = "0";
+      depoimento.style.transform = "translateX(50px)";
     }
-    depoimento.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    depoimento.style.transition = "opacity 0.5s ease, transform 0.5s ease";
   });
 }
 
-// Trocar depoimento
 function trocarDepoimento(novoIndice) {
   const depoimentoAnterior = depoimentos[depoimentoAtivo];
   const novoDepoimento = depoimentos[novoIndice];
 
-  // Ocultar depoimento anterior
-  depoimentoAnterior.style.opacity = '0';
-  depoimentoAnterior.style.transform = 'translateX(-50px)';
+  depoimentoAnterior.style.opacity = "0";
+  depoimentoAnterior.style.transform = "translateX(-50px)";
 
   setTimeout(() => {
-    depoimentoAnterior.style.display = 'none';
-
-    // Mostrar novo depoimento
-    novoDepoimento.style.display = 'block';
-    novoDepoimento.style.transform = 'translateX(50px)';
+    depoimentoAnterior.style.display = "none";
+    novoDepoimento.style.display = "block";
+    novoDepoimento.style.transform = "translateX(50px)";
 
     setTimeout(() => {
-      novoDepoimento.style.opacity = '1';
-      novoDepoimento.style.transform = 'translateX(0)';
+      novoDepoimento.style.opacity = "1";
+      novoDepoimento.style.transform = "translateX(0)";
     }, 50);
   }, 300);
 
   depoimentoAtivo = novoIndice;
 }
 
-// Avançar para próximo depoimento
 function proximoDepoimento() {
   const proximoIndice = (depoimentoAtivo + 1) % totalDepoimentos;
   trocarDepoimento(proximoIndice);
 }
 
-// Voltar ao depoimento anterior
-function depoimentoAnterior() {
+function depoimentoAnteriorFunc() {
   const indiceAnterior = (depoimentoAtivo - 1 + totalDepoimentos) % totalDepoimentos;
   trocarDepoimento(indiceAnterior);
 }
 
-// Auto-play dos depoimentos
 function iniciarAutoPlay() {
   setInterval(proximoDepoimento, 20000);
 }
 
-// Inicializar quando o DOM carregar
-document.addEventListener('DOMContentLoaded', () => {
-  // Configurar animação do título
-  const titulo = document.querySelector('.depoimentos h2');
-  titulo.style.opacity = '0';
-  titulo.style.transform = 'translateY(-30px)';
-  titulo.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-
-  setTimeout(() => {
-    titulo.style.opacity = '1';
-    titulo.style.transform = 'translateY(0)';
-  }, 100);
-
-  // Inicializar depoimentos
-  inicializarDepoimentos();
-
-  // Iniciar auto-play após um pequeno delay
-  setTimeout(iniciarAutoPlay, 20000);
-
-  // Adicionar controles de navegação se necessário
-  criarControlesNavegacao();
-});
-
-// Criar controles de navegação (pontos indicadores)
 function criarControlesNavegacao() {
-  const container = document.querySelector('.container-depoimentos');
-  const controles = document.createElement('div');
-  controles.className = 'controles-depoimentos';
+  const container = document.querySelector(".container-depoimentos");
+  const controles = document.createElement("div");
+  controles.className = "controles-depoimentos";
   controles.style.cssText = `
     display: flex;
     justify-content: center;
@@ -235,20 +190,20 @@ function criarControlesNavegacao() {
   `;
 
   depoimentos.forEach((_, indice) => {
-    const ponto = document.createElement('button');
-    ponto.className = 'ponto-controle';
+    const ponto = document.createElement("button");
+    ponto.className = "ponto-controle";
     ponto.style.cssText = `
       width: 12px;
       height: 12px;
       border-radius: 50%;
       border: 2px solid #ccc;
-      background: ${indice === 0 ? 'linear-gradient(90deg, #FA6200, #F09617, #00C48C)' : 'transparent'};
+      background: ${indice === 0 ? "linear-gradient(90deg, #FA6200, #F09617, #00C48C)" : "transparent"};
       cursor: pointer;
       transition: all 0.3s ease;
-      outline: none; /* remove o contorno roxo do foco */
+      outline: none;
     `;
 
-    ponto.addEventListener('click', () => {
+    ponto.addEventListener("click", () => {
       trocarDepoimento(indice);
       atualizarPontos(indice);
     });
@@ -259,15 +214,38 @@ function criarControlesNavegacao() {
   container.appendChild(controles);
 }
 
-// Atualizar pontos indicadores
 function atualizarPontos(indiceAtivo) {
-  const pontos = document.querySelectorAll('.ponto-controle');
+  const pontos = document.querySelectorAll(".ponto-controle");
   pontos.forEach((ponto, indice) => {
     ponto.style.background =
       indice === indiceAtivo
-        ? 'linear-gradient(90deg, #FA6200, #F09617, #00C48C)'
-        : 'transparent';
-    ponto.style.border = '2px solid #ccc';
-    ponto.style.outline = 'none';
+        ? "linear-gradient(90deg, #FA6200, #F09617, #00C48C)"
+        : "transparent";
+    ponto.style.border = "2px solid #ccc";
+    ponto.style.outline = "none";
   });
 }
+
+/* ============================
+   INICIALIZAÇÕES NO DOM
+============================ */
+document.addEventListener("DOMContentLoaded", () => {
+  // Título seção serviços
+  const tituloServicos = document.querySelector(".servicos h2");
+  if (tituloServicos) {
+    tituloServicos.classList.add("antes-animacao");
+    setTimeout(() => tituloServicos.classList.add("animar-entrada"), 200);
+  }
+
+  // Título seção depoimentos
+  const tituloDepoimentos = document.querySelector(".depoimentos h2");
+  if (tituloDepoimentos) {
+    tituloDepoimentos.classList.add("antes-animacao");
+    setTimeout(() => tituloDepoimentos.classList.add("animar-entrada"), 200);
+  }
+
+  // Inicializar depoimentos
+  inicializarDepoimentos();
+  setTimeout(iniciarAutoPlay, 20000);
+  criarControlesNavegacao();
+});

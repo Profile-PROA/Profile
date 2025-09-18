@@ -346,6 +346,7 @@ main {
    background-image: url(../assets/images/valores.jpg);
 }
 
+
 /* ---- SEÇÃO EQUIPE ---- */
 .secao-equipe {
    padding: clamp(4rem, 10vw, 6rem) clamp(1rem, 4vw, 2rem);
@@ -370,10 +371,13 @@ main {
 }
 
 .titulo-equipe {
-   font-size: clamp(2rem, 5vw, 3rem);
-   color: #333;
-   margin-bottom: 1rem;
-   font-weight: 700;
+   text-align: center;
+   font-size: 3rem;
+   margin-bottom: 3rem;
+   background: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
 }
 
 .subtitulo-equipe {
