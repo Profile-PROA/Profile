@@ -571,23 +571,90 @@ main {
 }
 
 /* Responsividade */
-@media (max-width: 992px) {
+@media (min-width: 1400px) {
     .carrossel-equipe {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .carrossel-equipe {
-        grid-template-columns: 1fr;
-    }
-    
-    .coluna-equipe {
-        gap: clamp(1rem, 3vw, 1.5rem);
+        gap: clamp(2rem, 3vw, 2.5rem);
     }
     
     .imagem-membro {
-        height: clamp(250px, 45vw, 350px);
+        height: clamp(380px, 42vw, 480px);
+    }
+    
+    .info-membro {
+        padding: clamp(2rem, 3vw, 2.5rem);
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .imagem-membro {
+        height: clamp(350px, 40vw, 450px);
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+    .imagem-membro {
+        height: clamp(320px, 38vw, 420px);
+    }
+    
+    .carrossel-equipe {
+        gap: clamp(1.5rem, 2.5vw, 2rem);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .carrossel-equipe {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.5rem, 3vw, 2rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(280px, 35vw, 380px);
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1.5rem, 3vw, 2rem);
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .carrossel-equipe {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(250px, 40vw, 320px);
+    }
+    
+    .info-membro {
+        padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 576px) {
+    .carrossel-equipe {
+        grid-template-columns: 1fr;
+        gap: clamp(1.2rem, 3vw, 1.8rem);
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1.2rem, 3vw, 1.8rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(220px, 45vw, 280px);
+    }
+    
+    .nome-membro {
+        font-size: clamp(1.1rem, 3vw, 1.25rem);
+    }
+    
+    .cargo-membro {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
 }
 
@@ -601,8 +668,54 @@ main {
         margin-bottom: 2rem;
     }
     
+    .carrossel-equipe {
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 3vw, 1.5rem);
+        padding: 0.5rem;
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1rem, 3vw, 1.5rem);
+    }
+    
     .imagem-membro {
-        height: clamp(220px, 50vw, 300px);
+        height: clamp(200px, 50vw, 260px);
+    }
+    
+    .info-membro {
+        padding: clamp(1rem, 3vw, 1.5rem);
+    }
+    
+    .nome-membro {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        margin-bottom: 0.3rem;
+    }
+    
+    .cargo-membro {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .carrossel-equipe {
+        padding: 0.25rem;
+        gap: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(180px, 55vw, 240px);
+    }
+    
+    .info-membro {
+        padding: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    
+    .nome-membro {
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+    }
+    
+    .cargo-membro {
+        font-size: clamp(0.8rem, 3vw, 0.9rem);
     }
 }
 
