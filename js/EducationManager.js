@@ -1,5 +1,5 @@
-// class ExperienceManager
-class ExperienceManager {
+// class EducationManager
+class EducationManager {
     constructor(containerSelector, btnAddSelector) {
         this.container = document.querySelector(containerSelector);
         this.btnAdd = document.querySelector(btnAddSelector);
@@ -15,10 +15,10 @@ class ExperienceManager {
             }
         });
 
-        // Botão adicionar experiência
+        // Botão adicionar educação
         this.btnAdd.addEventListener("click", (e) => {
             e.preventDefault();
-            this.addExperience();
+            this.addEducation();
         });
 
         // Garante que os fieldsets iniciais tenham os botões funcionando
@@ -27,7 +27,7 @@ class ExperienceManager {
         return this;
     }
 
-    addExperience() {
+    addEducation() {
         const firstItem = this.container.querySelector("fieldset");
         if (!firstItem) return;
 
@@ -39,36 +39,36 @@ class ExperienceManager {
         });
         
         // Ativa botão de lixeira
-        const btnTrash = newItem.querySelector(".btn-trash-experience button");
+        const btnTrash = newItem.querySelector(".btn-trash-education button");
         if (btnTrash) {
             btnTrash.disabled = false;
             btnTrash.classList.remove("btn-forms-disable");
             btnTrash.addEventListener("click", (e) => {
                 e.preventDefault();
                 newItem.remove();
-                this.reindexExperiences();
+                this.reindexEducations();
             });
         }
         
         this.container.appendChild(newItem);
-        this.reindexExperiences();
+        this.reindexEducations();
         applyPeriodMask();
     }
 
     attachTrashEvents() {
-        this.container.querySelectorAll(".btn-trash-experience button").forEach((btn) => {
+        this.container.querySelectorAll(".btn-trash-education button").forEach((btn) => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
                 const fieldset = btn.closest("fieldset");
                 if (fieldset) {
                     fieldset.remove();
-                    this.reindexExperiences();
+                    this.reindexEducations();
                 }
             });
         });
     }
 
-    reindexExperiences() {
+    reindexEducations() {
         const fieldsets = this.container.querySelectorAll("fieldset");
 
         fieldsets.forEach((fieldset, index) => {
@@ -91,30 +91,54 @@ class ExperienceManager {
     }
 }
 
-// Instância da classe <ExperienceManager>
-const expManager = new ExperienceManager (
-    "#box-list-experiences", 
-    "#btn-add-experience button",
+// Instância da classe <EducationManager>
+const eduManager = new EducationManager (
+    "#box-list-educations", 
+    "#btn-add-education button",
 );
 
 // Chamando metodo init
-expManager.init();
+eduManager.init();
 
-// Mascara para o input período na parte dados da experiencia
+// Mascara para o input período na parte dados da educação
 function applyPeriodMask() {
-    const periodInputs = document.querySelectorAll("input[name^='periodoExperiencia']");
+    const periodStartInputs = document.querySelectorAll("input[name^='periodoInicio']");
+    const periodEndInputs = document.querySelectorAll("input[name^='periodoTermino']");
     
-    periodInputs.forEach(input => {
-        // Evita reaplicar IMask em um input que já tenha
+    // Início - só data
+    periodStartInputs.forEach(input => {
         if (!input.maskRef) {
             const mask = IMask(input, {
-                mask: 'MMM. 0000 - MMM. 0000',
+                mask: 'MMM. 0000',
                 blocks: {
                     MMM: {
                         mask: IMask.MaskedEnum,
                         enum: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
                     }
                 }
+            });
+            input.maskRef = mask;
+        }
+    });
+
+    // Término - data OU "cursando"
+    periodEndInputs.forEach(input => {
+        if (!input.maskRef) {
+            const mask = IMask(input, {
+                mask: [
+                    {
+                        mask: 'MMM. 0000',
+                        blocks: {
+                            MMM: {
+                                mask: IMask.MaskedEnum,
+                                enum: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+                            }
+                        }
+                    },
+                    {
+                        mask: 'cursando'
+                    }
+                ]
             });
             input.maskRef = mask;
         }

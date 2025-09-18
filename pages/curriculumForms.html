@@ -47,23 +47,28 @@
                     Experiência
                 </li>
 
-                <li id="li-skills">
+                <li id="li-education">
                     <span>3</span>
+                    Educação
+                </li>
+
+                <li id="li-skills">
+                    <span>4</span>
                     Habilidades
                 </li>
                 
                 <li id="li-preferences">
-                    <span>4</span>
+                    <span>5</span>
                     Preferências
                 </li>
                 
                 <li id="li-models">
-                    <span>5</span>
+                    <span>6</span>
                     Modelos
                 </li>
                 
                 <li id="li-preview">
-                    <span>6</span>
+                    <span>7</span>
                     Preview
                 </li>
             </ul>
@@ -80,6 +85,11 @@
                     <div class="step-header-content">
                         <iconify-icon icon="material-symbols:work" width="35" height="35"></iconify-icon>
                         Experiência
+                    </div>
+
+                    <div class="step-header-content">
+                        <iconify-icon icon="cil:education" width="35" height="35"></iconify-icon>
+                        Educação
                     </div>
 
                     <div class="step-header-content">
@@ -114,6 +124,11 @@
                     <span class="step-description-content">
                         <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
                         Informações fundamentais para mostrar experiência
+                    </span>
+
+                    <span class="step-description-content">
+                        <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
+                        Informações fundamentais para mostrar formação
                     </span>
 
                     <span class="step-description-content">
@@ -214,8 +229,8 @@
     
                                 <div class="box-inputs-experience">
                                     <div class="box-input-experience">
-                                        <label for="periodo">Período:</label>
-                                        <input type="text" id="periodo" name="periodo" class="input-curriculum" placeholder="Ex.: mar. 2024 - fev. 2025">
+                                        <label for="periodoExperiencia">Período:</label>
+                                        <input type="text" id="periodoExperiencia" name="periodoExperiencia" class="input-curriculum" placeholder="Ex.: mar. 2024 - fev. 2025">
                                     </div>
     
                                     <div class="box-input-experience">
@@ -258,7 +273,78 @@
                         </div>                        
                     </div>
 
-                    <!-- Etapa 3: Habilidades -->
+                    <!-- Etapa 3: Educação -->
+                    <div id="step-education" class="step">
+                        <div id="box-list-educations">
+                            <fieldset class="box-fieldset-education">
+                                <div class="box-inputs-education">
+                                    <div class="box-input-education">
+                                        <label for="nivel">Nível:</label>
+                                        <select id="nivel" name="nivel" class="input-curriculum">
+                                            <option value="" disabled selected>Selecione o nível da formação...</option>
+                                            <option value="fundamental">Ensino Fundamental</option>
+                                            <option value="medio">Ensino Médio</option>
+                                            <option value="tecnico">Técnico</option>
+                                            <option value="graduacao">Graduação</option>
+                                            <option value="pos">Pós-graduação</option>
+                                            <option value="mestrado">Mestrado</option>
+                                            <option value="doutorado">Doutorado</option>
+                                        </select>
+                                    </div>
+    
+                                    <div class="box-input-education">
+                                        <label for="curso">Curso:</label>
+                                        <input type="text" id="curso" name="curso" class="input-curriculum" placeholder="Digite o nome da curso...">
+                                    </div>
+                                </div>
+    
+                                <div class="box-inputs-education">
+                                    <div class="box-input-education">
+                                        <label for="periodoInicio">Início:</label>
+                                        <input type="text" id="periodoInicio" name="periodoInicio" class="input-curriculum" placeholder="Ex.: mar. 2024">
+                                    </div>
+    
+                                    <div class="box-input-education">
+                                        <label for="periodoTermino">Término:</label>
+                                        <input type="text" id="periodoTermino" name="periodoTermino" class="input-curriculum" placeholder="Ex.: mar. 2024/cursando">
+                                    </div>
+                                </div>
+    
+                                <div class="box-inputs-education">
+                                    <div class="box-input-education">
+                                        <label for="instituicao">Instituição:</label>
+                                        <input type="text" id="instituicao" name="instituicao" class="input-curriculum" placeholder="Digite o nome da instituição...">
+                                    </div>
+    
+                                    <div class="btn-trash-education" id="btn-trash-education">
+                                        <button class="btn-forms btn-forms-orange btn-forms-disable" disabled aria-disabled="true">
+                                            <iconify-icon icon="iconamoon:trash" width="24" height="24"></iconify-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div id="btn-add-education">
+                            <button type="button" class="btn-forms btn-forms-gray">
+                                + Adicionar formação
+                            </button>
+                        </div>
+
+                        <div class="btns-forms-content">
+                            <button type="button" class="btn-forms btn-forms-gray btn-prev">
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24" class="rotate-arrow"></iconify-icon>
+                                Voltar
+                            </button>
+
+                            <button type="button" class="btn-forms btn-forms-orange btn-next">
+                                Próximo
+                                <iconify-icon icon="weui:arrow-outlined" width="12" height="24"></iconify-icon>
+                            </button>
+                        </div>                        
+                    </div>
+
+                    <!-- Etapa 4: Habilidades -->
                     <div id="step-skills" class="step">
                         <div class="box-inputs-skills">
                             <div class="box-input-skills">
@@ -285,7 +371,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 4: Preferência -->
+                    <!-- Etapa 5: Preferência -->
                     <div id="step-preferences" class="step">
                         <div id="box-preferences">
                             <div class="box-inputs-preferences">
@@ -311,7 +397,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 5: Modelos -->
+                    <!-- Etapa 6: Modelos -->
                     <div id="step-models" class="step">
                         <div id="box-models">
                             <div class="box-inputs-models">
@@ -377,7 +463,7 @@
                                     
                                     <span class="type-model-card">ATS-Friendly</span>
     
-                                    <p>Sem elementos gráficos, ideal para triagem automática.</p>
+                                    <p>Com elementos simples, ideal para triagem automática.</p>
                                     
                                     <div class="category-model-card">
                                         <span>Texto puro</span>
@@ -399,7 +485,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 6: Preview -->
+                    <!-- Etapa 7: Preview -->
                     <div id="step-preview" class="step">
                         <div id="box-preview">
                             <div id="box-preview-curriculum">
@@ -447,13 +533,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.6.1/imask.min.js"></script>
 
 <!-- JS Classe StepFormWizard -->
-<script src="../js/StepFormWizard.js"></script>
+<script type="module" src="../js/StepFormWizard.js"></script>
 
 <!-- JS Classe ExperienceManager -->
-<script src="../js/ExperienceManager.js"></script>
+<script type="module" src="../js/ExperienceManager.js"></script>
 
-<!-- JS Form Wizard -->
-<script src="../js/formWizard.js"></script>
+<!-- JS Classe EducationManager -->
+<script type="module" src="../js/EducationManager.js"></script>
+
+<!-- JS Api -->
+<script type="module" src="../js/api.js"></script>
+
+<!-- JS pegar dados -->
+<script type="module" src="../js/getDataFormWizard.js"></script>
 
 <!-- Link para Icones do Iconify -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
