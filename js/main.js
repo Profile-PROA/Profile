@@ -113,12 +113,14 @@ const observador = new IntersectionObserver((entradas) => {
   });
 }, opcoesObserver);
 
-// Adicionar estado inicial a todos os elementos que terão animação
+// Aplica observer apenas em elementos fora do footer
 document.querySelectorAll(
   "section, h1, h2, h3, p, img, .cartao-servico, .cartao-modelo, .depoimento, .botao-cta"
 ).forEach((el) => {
-  el.classList.add("antes-animacao");
-  observador.observe(el);
+  if (!el.closest('footer')) { // ignora elementos dentro do footer
+    el.classList.add("antes-animacao");
+    observador.observe(el);
+  }
 });
 
 /* ============================

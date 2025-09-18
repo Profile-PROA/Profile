@@ -1,52 +1,34 @@
-/*Seção - Equipe*/
+/* Seção - Equipe */
 const containerCards = document.getElementById('containerCardsEquipe');
-const indicadoresContainer = document.getElementById('indicadoresCarrossel');
 let slideAtual = 0;
 
 const cards = containerCards.querySelectorAll('.card-membro');
 const totalCards = cards.length;
 
-const totalIndicadores = 6;
+// Quantos cards aparecem por slide (ajuste conforme necessário)
+const cardsPorSlide = 3; 
+const totalSlides = Math.ceil(totalCards / cardsPorSlide);
 
-for (let i = 0; i < totalIndicadores; i++) {
-    const indicador = document.createElement('div');
-    indicador.classList.add('indicador');
-    if (i === 0) indicador.classList.add('ativo');
-    indicador.addEventListener('click', () => {
-        irParaSlide(i);
-    });
-    indicadoresContainer.appendChild(indicador);
-}
+// Adiciona transição suave
+containerCards.style.transition = "transform 0.8s ease";
 
+// Atualiza a posição do carrossel
 function atualizarCarrossel() {
-
-    const cardsPorSlide = Math.ceil(totalCards / totalIndicadores);
-    const deslocamento = - (slideAtual * cardsPorSlide * 350);
+    const deslocamento = - (slideAtual * cardsPorSlide * 350); // ajuste 350 conforme largura do card + gap
     containerCards.style.transform = `translateX(${deslocamento}px)`;
-
-    const indicadores = indicadoresContainer.querySelectorAll('.indicador');
-    indicadores.forEach((indicador, index) => {
-        indicador.classList.toggle('ativo', index === slideAtual);
-    });
 }
 
-function moverCarrossel(direcao) {
-    slideAtual += direcao;
-
-    if (slideAtual >= totalIndicadores) {
-        slideAtual = 0;
-    } else if (slideAtual < 0) {
-        slideAtual = totalIndicadores - 1;
-    }
-
+// Move para o próximo slide
+function moverCarrossel() {
+    slideAtual++;
+    if (slideAtual >= totalSlides) slideAtual = 0;
     atualizarCarrossel();
 }
 
-function irParaSlide(index) {
-    slideAtual = index;
-    atualizarCarrossel();
-}
+// Rolagem automática a cada 5 segundos
+setInterval(moverCarrossel, 5000);
 
+/* --- Observer para animação de todos os elementos --- */
 const opcoesObserver = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -56,15 +38,25 @@ const observador = new IntersectionObserver((entradas) => {
   entradas.forEach((entrada) => {
     if (entrada.isIntersecting) {
       entrada.target.classList.add("animar-entrada");
-      observador.unobserve(entrada.target); // só anima uma vez
+      observador.unobserve(entrada.target);
     }
   });
 }, opcoesObserver);
 
-// Adicionar estado inicial a todos os elementos que terão animação
 document.querySelectorAll(
   "section, h1, h2, h3, p, img, .cartao-servico, .cartao-modelo, .depoimento, .botao-cta"
 ).forEach((el) => {
   el.classList.add("antes-animacao");
   observador.observe(el);
+});
+
+// Aplica o observer apenas nos elementos dentro de sections principais, excluindo footer
+document.querySelectorAll(
+  "section, h1, h2, h3, p, img, .cartao-servico, .cartao-modelo, .depoimento, .botao-cta"
+).forEach((el) => {
+  // ignora elementos que estejam dentro do footer
+  if (!el.closest('footer')) {
+    el.classList.add("antes-animacao");
+    observador.observe(el);
+  }
 });
