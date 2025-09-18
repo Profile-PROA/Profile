@@ -16,10 +16,23 @@ main {
    overflow-x: hidden;
 }
 
+/* Estado inicial antes da animação */
+.antes-animacao {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* Classe que será adicionada quando o elemento aparecer */
+.animar-entrada {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ---- SEÇÃO PRINCIPAL ---- */
 .secao-principal {
    min-height: 100vh;
-   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
    display: flex;
    align-items: center;
    justify-content: center;
@@ -346,6 +359,7 @@ main {
    background-image: url(../assets/images/valores.jpg);
 }
 
+
 /* ---- SEÇÃO EQUIPE ---- */
 .secao-equipe {
    padding: clamp(4rem, 10vw, 6rem) clamp(1rem, 4vw, 2rem);
@@ -370,10 +384,13 @@ main {
 }
 
 .titulo-equipe {
-   font-size: clamp(2rem, 5vw, 3rem);
-   color: #333;
-   margin-bottom: 1rem;
-   font-weight: 700;
+   text-align: center;
+   font-size: 3rem;
+   margin-bottom: 3rem;
+   background: linear-gradient(90deg, #FA6200, #F09617, #00C48C);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
 }
 
 .subtitulo-equipe {
@@ -382,29 +399,36 @@ main {
    margin-bottom: clamp(3rem, 6vw, 4rem);
 }
 
+/* Grid principal - 3 colunas */
 .carrossel-equipe {
-   position: relative;
-   overflow: hidden;
-   margin: 3rem 0;
-   border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin: 3rem 0;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+/* Cada coluna contém 2 cards empilhados */
+.coluna-equipe {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .container-cards-equipe {
-   display: flex;
-   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-   gap: clamp(1.5rem, 4vw, 2.5rem);
-   padding: 1rem;
+   /* Removido - não necessário com o novo layout */
+   display: contents;
 }
 
 .card-membro {
-   min-width: clamp(280px, 45vw, 320px);
-   flex-shrink: 0;
-   background: white;
-   border-radius: 20px;
-   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-   overflow: hidden;
-   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-   border: 2px solid transparent;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
 }
 
 .card-membro:hover {
@@ -415,7 +439,7 @@ main {
 
 .imagem-membro {
    width: 100%;
-   height: clamp(320px, 45vw, 400px);
+   height: clamp(320px, 40vw, 420px);
    overflow: hidden;
    position: relative;
 }
@@ -446,16 +470,23 @@ main {
 }
 
 .info-membro {
-   padding: clamp(1.5rem, 4vw, 2rem);
+   padding: clamp(1.5rem, 3vw, 2rem);
    background: linear-gradient(135deg, #f8f9fa, #ffffff);
 }
 
 .nome-membro {
-   font-size: clamp(1.2rem, 3vw, 1.4rem);
+   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
    font-weight: 700;
    color: #333;
    margin-bottom: 0.5rem;
    transition: color 0.3s ease;
+}
+
+.cargo-membro {
+   font-size: clamp(0.9rem, 2vw, 1rem);
+   color: #666;
+   font-weight: 500;
+   opacity: 0.8;
 }
 
 .card-membro:hover .nome-membro {
@@ -465,11 +496,9 @@ main {
    background-clip: text;
 }
 
+/* Controles do carrossel - mantidos para compatibilidade */
 .controles-carrossel {
-   display: flex;
-   justify-content: center;
-   gap: 1.5rem;
-   margin-top: 3rem;
+   display: none; /* Ocultos no layout de grid fixo */
 }
 
 .botao-carrossel {
@@ -509,10 +538,7 @@ main {
 }
 
 .indicadores-carrossel {
-   display: flex;
-   justify-content: center;
-   gap: 0.8rem;
-   margin-top: 1.5rem;
+   display: none; /* Ocultos no layout de grid fixo */
 }
 
 .indicador {
@@ -542,6 +568,155 @@ main {
 
 .indicador.ativo::before {
    opacity: 1;
+}
+
+/* Responsividade */
+@media (min-width: 1400px) {
+    .carrossel-equipe {
+        gap: clamp(2rem, 3vw, 2.5rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(380px, 42vw, 480px);
+    }
+    
+    .info-membro {
+        padding: clamp(2rem, 3vw, 2.5rem);
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .imagem-membro {
+        height: clamp(350px, 40vw, 450px);
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+    .imagem-membro {
+        height: clamp(320px, 38vw, 420px);
+    }
+    
+    .carrossel-equipe {
+        gap: clamp(1.5rem, 2.5vw, 2rem);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .carrossel-equipe {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.5rem, 3vw, 2rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(280px, 35vw, 380px);
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1.5rem, 3vw, 2rem);
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .carrossel-equipe {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(250px, 40vw, 320px);
+    }
+    
+    .info-membro {
+        padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 576px) {
+    .carrossel-equipe {
+        grid-template-columns: 1fr;
+        gap: clamp(1.2rem, 3vw, 1.8rem);
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1.2rem, 3vw, 1.8rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(220px, 45vw, 280px);
+    }
+    
+    .nome-membro {
+        font-size: clamp(1.1rem, 3vw, 1.25rem);
+    }
+    
+    .cargo-membro {
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .secao-equipe {
+        padding: clamp(2rem, 8vw, 4rem) clamp(0.5rem, 3vw, 1rem);
+    }
+    
+    .titulo-equipe {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+    
+    .carrossel-equipe {
+        grid-template-columns: 1fr;
+        gap: clamp(1rem, 3vw, 1.5rem);
+        padding: 0.5rem;
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1rem, 3vw, 1.5rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(200px, 50vw, 260px);
+    }
+    
+    .info-membro {
+        padding: clamp(1rem, 3vw, 1.5rem);
+    }
+    
+    .nome-membro {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        margin-bottom: 0.3rem;
+    }
+    
+    .cargo-membro {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .carrossel-equipe {
+        padding: 0.25rem;
+        gap: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(180px, 55vw, 240px);
+    }
+    
+    .info-membro {
+        padding: clamp(0.8rem, 3vw, 1.2rem);
+    }
+    
+    .nome-membro {
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+    }
+    
+    .cargo-membro {
+        font-size: clamp(0.8rem, 3vw, 0.9rem);
+    }
 }
 
 /* ---- SEÇÃO REDIRECIONAMENTO ---- */
