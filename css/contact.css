@@ -112,7 +112,7 @@ input, textarea{
   margin-bottom: 30px;
 }
 
-button .button_formulario{
+#button_formulario{
   margin-top: 20px;
   width: 100%;
   padding: 20px;
@@ -123,7 +123,7 @@ button .button_formulario{
   cursor: pointer;
 }
 
-button .button_formulario:hover {
+button.button_formulario:hover {
   background: linear-gradient(to right, #e55b00, #ff7700);
 }
 
@@ -255,9 +255,7 @@ button .button_formulario:hover {
 
 main { padding-bottom: 50px; }
 
-/* --------------------
-   Responsividade
---------------------- */
+/* ----- Responsividade ------- *
 
 /* -------- TABLET -------- */
 @media (max-width: 1024px) and (min-width: 768px) {
