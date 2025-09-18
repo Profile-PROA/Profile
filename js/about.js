@@ -60,3 +60,14 @@ document.querySelectorAll(
     observador.observe(el);
   }
 });
+
+// Aplica observer apenas em elementos "fixos" da página, excluindo footer e indicadores
+document.querySelectorAll(
+  "section, h1, h2, h3, p, img, .cartao-servico, .cartao-modelo, .depoimento, .botao-cta"
+).forEach((el) => {
+  // Ignora elementos dentro do footer ou com a classe de indicadores
+  if (!el.closest('footer') && !el.classList.contains('ponto-controle') && !el.closest('.controles-depoimentos')) {
+    el.classList.add("antes-animacao");
+    observador.observe(el);
+  }
+});
