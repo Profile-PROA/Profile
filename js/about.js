@@ -46,3 +46,25 @@ function irParaSlide(index) {
     slideAtual = index;
     atualizarCarrossel();
 }
+
+const opcoesObserver = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    if (entrada.isIntersecting) {
+      entrada.target.classList.add("animar-entrada");
+      observador.unobserve(entrada.target); // só anima uma vez
+    }
+  });
+}, opcoesObserver);
+
+// Adicionar estado inicial a todos os elementos que terão animação
+document.querySelectorAll(
+  "section, h1, h2, h3, p, img, .cartao-servico, .cartao-modelo, .depoimento, .botao-cta"
+).forEach((el) => {
+  el.classList.add("antes-animacao");
+  observador.observe(el);
+});

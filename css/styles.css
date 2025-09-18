@@ -834,14 +834,15 @@ section {
 
 /* ---- SEÇÃO SOBRE ---- */
 .sobre {
-   background: #ffffff;
+   background: #f5f5f5;
    color: #000;
+   padding: 80px 5%;
 }
 
 .grade-sobre {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: 4rem;
+   gap: 6rem;
    align-items: center;
 }
 

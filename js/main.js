@@ -175,7 +175,7 @@ function depoimentoAnteriorFunc() {
 }
 
 function iniciarAutoPlay() {
-  setInterval(proximoDepoimento, 20000);
+  setInterval(proximoDepoimento, 5000);
 }
 
 function criarControlesNavegacao() {

@@ -16,10 +16,23 @@ main {
    overflow-x: hidden;
 }
 
+/* Estado inicial antes da animação */
+.antes-animacao {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* Classe que será adicionada quando o elemento aparecer */
+.animar-entrada {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ---- SEÇÃO PRINCIPAL ---- */
 .secao-principal {
    min-height: 100vh;
-   background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
    display: flex;
    align-items: center;
    justify-content: center;
