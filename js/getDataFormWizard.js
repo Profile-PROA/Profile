@@ -1,9 +1,8 @@
 // Seleciona o botão da última etapa
-const btnContinuePreferences = document.querySelector("#step-preferences .btn-next");
-const btnContinueModels = document.querySelector("#step-models .btn-next");
+const btnContinue = document.querySelector("#step-preferences .btn-next");
 
 // Evento para pegar dados - fazer requisição e retornar 
-btnContinuePreferences.addEventListener("click", (e) => {
+btnContinue.addEventListener("click", async (e) => {
     e.preventDefault();
 
     // Seleciona todo o form
@@ -104,7 +103,8 @@ btnContinuePreferences.addEventListener("click", (e) => {
             Técnicas: ${formData.skills.techniques}
             Interpessoais: ${formData.skills.interpersonal}
         
-        Observação: Apenas forneça o conteúdo do currículo. Não inclua observações, dicas ou comentários. Caso algum dado do candidato, experiência profissional ou formação acadêmica esteja vazio, desconsidere, deixa vazio e inclua apenas as informações disponíveis. 
+        Observação: Apenas forneça o conteúdo do currículo. Não inclua observações, dicas ou comentários. Caso algum dado do candidato, experiência profissional ou formação acadêmica esteja vazio, desconsidere, deixa vazio e inclua apenas as informações disponíveis.
+        Traga todas essa infromação estruturado em HTML de forma bem elaborada com css basico inline usando apenas id = # no css apartir do html section sem ser o documento completo do HMLT%
     `;
 
     async function callApi(prompt) {
@@ -144,15 +144,9 @@ btnContinuePreferences.addEventListener("click", (e) => {
         }
     }
 
+    const htmlLimpo = (await callApi(prompt)).replace(/^```html\s*/, '').replace(/\s*```$/, '').replace(/```$/, '');
+
+    // Exibe o resultado
+    document.querySelector('#contentPdf').innerHTML = htmlLimpo;
     console.log(callApi(prompt))
 });
-
-btnContinuePreferences.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    // Seleciona todo o form
-    const form = document.getElementById("form-wizard");
-
-    // Objeto para armazenar os dados
-    const formData = {};
-})

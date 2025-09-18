@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo StartupSpark</title>
+<style>
+  /* --------------------
+      Variáveis de cores e fontes
+  --------------------- */
+  :root {
+    --primary-color: #1F2937; /* Preto suave */
+    --secondary-color: #6B7280; /* Cinza */
+    --accent-color: #f16d00; /* Laranja vibrante */
+    --highlight-color: #00aa71; /* Verde vibrante */
+    --bg-color: #F3F4F6; /* Fundo claro */
+    --card-bg: #FFFFFF; /* Cartões */
+    --font-sans: 'Poppins', sans-serif;
+  }
+
+  /* --------------------
+      Reset e base
+  --------------------- */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background-color: var(--bg-color); color: var(--primary-color); line-height: 1.5; padding: 20px; }
+  a { text-decoration: none; color: var(--highlight-color); }
+
+  /* --------------------
+      Container
+  --------------------- */
+  .container { max-width: 900px; margin: auto; background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+  h1 { font-size: 34px; color: var(--accent-color); margin-bottom: 5px; }
+  h2 { font-size: 20px; color: var(--primary-color); margin-top: 25px; margin-bottom: 12px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+  /* --------------------
+      Dados Pessoais
+  --------------------- */
+  .personal-info { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; font-weight: 500; }
+  .personal-info div { min-width: 150px; }
+
+  /* --------------------
+      Seções
+  --------------------- */
+  .section { margin-bottom: 25px; }
+  .skills span { display: inline-block; background: var(--highlight-color); color: #fff; padding: 5px 12px; border-radius: 12px; margin-right: 8px; margin-bottom: 5px; font-size: 13px; font-weight: 600; }
+  .experience, .education { margin-bottom: 15px; }
+  .experience h3, .education h3 { font-size: 16px; margin-bottom: 4px; color: var(--accent-color); }
+  .experience p, .education p { font-size: 14px; color: var(--secondary-color); }
+
+  @media(max-width:600px){
+    .personal-info { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dados Pessoais -->
+        <div class="section">
+            <h1 id="fullname"></h1>
+            <div class="personal-info">
+                <div>Email: <a href="#" id="email"></a></div>
+                <div>Telefone: <span id="phone"></span></div>
+                <div>Localização: <span id="location"></span></div>
+                <div id="portfolioContainer">Portfólio: <a href="#" id="portfolio"></a></div>
+                <div id="linkedinContainer">LinkedIn: <a href="#" id="linkedin"></a></div>
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="section" id="skillsSection">
+            <h2>Habilidades</h2>
+            <div class="skills" id="skills"></div>
+        </div>
+
+        <!-- Experiências -->
+        <div class="section" id="experienceSection">
+            <h2>Experiência Profissional</h2>
+            <div id="experienceList"></div>
+        </div>
+
+        <!-- Educação -->
+        <div class="section" id="educationSection">
+            <h2>Educação</h2>
+            <div id="educationList"></div>
+        </div>
+    </div>
+
+    <script>
+        // Dados dinâmicos
+        const data = {
+            fullname: "Maurício Martins de Gois",
+            email: "mauricio@example.com",
+            phone: "+55 11 99999-9999",
+            state: "SP",
+            city: "São Paulo",
+            portfolio: "https://portfolio.com",
+            linkedin: "https://linkedin.com/in/mauricio",
+            skills: ["JavaScript", "React", "Node.js", "CSS", "HTML", "Figma"],
+            experience: [
+                {
+                    role: "Desenvolvedor Front-end",
+                    company: "Startup X",
+                    period: "Jan 2022 - Atual",
+                    location: "São Paulo, SP",
+                    description: "Desenvolvimento de produtos web, implementação de features, aumento de engajamento em 40%."
+                }
+            ],
+            education: [
+                {
+                    course: "Gestão de TI",
+                    school: "FATEC Itaquaquecetuba",
+                    period: "2022 - 2025"
+                }
+            ]
+        };
+
+        // Preencher dados pessoais
+        document.getElementById('fullname').innerText = data.fullname;
+        document.getElementById('email').innerText = data.email;
+        document.getElementById('email').href = `mailto:${data.email}`;
+        document.getElementById('phone').innerText = data.phone;
+        document.getElementById('location').innerText = `${data.city}, ${data.state}`;
+
+        // Portfolio e LinkedIn
+        if(data.portfolio){
+            document.getElementById('portfolio').innerText = data.portfolio;
+            document.getElementById('portfolio').href = data.portfolio;
+        } else {
+            document.getElementById('portfolioContainer').style.display = 'none';
+        }
+
+        if(data.linkedin){
+            document.getElementById('linkedin').innerText = data.linkedin;
+            document.getElementById('linkedin').href = data.linkedin;
+        } else {
+            document.getElementById('linkedinContainer').style.display = 'none';
+        }
+
+        // Habilidades
+        const skillsContainer = document.getElementById('skills');
+        if(data.skills && data.skills.length > 0){
+            data.skills.forEach(skill=>{
+            const span = document.createElement('span');
+            span.textContent = skill;
+            skillsContainer.appendChild(span);
+            });
+        } else {
+            document.getElementById('skillsSection').style.display = 'none';
+        }
+
+        // Experiência
+        const expContainer = document.getElementById('experienceList');
+        if(data.experience && data.experience.length > 0){
+            data.experience.forEach(exp=>{
+            const div = document.createElement('div');
+            div.classList.add('experience');
+            div.innerHTML = `<h3>${exp.role} - ${exp.company}</h3>
+                            <p>${exp.period} | ${exp.location}</p>
+                            <p>${exp.description}</p>`;
+            expContainer.appendChild(div);
+            });
+        } else {
+            document.getElementById('experienceSection').style.display = 'none';
+        }
+
+        // Educação
+        const eduContainer = document.getElementById('educationList');
+        if(data.education && data.education.length > 0){
+            data.education.forEach(edu=>{
+            const div = document.createElement('div');
+            div.classList.add('education');
+            div.innerHTML = `<h3>${edu.course} - ${edu.school}</h3>
+                            <p>${edu.period}</p>`;
+            eduContainer.appendChild(div);
+            });
+        } else {
+            document.getElementById('educationSection').style.display = 'none';
+        }
+    </script>
+</body>
+<!-- JS pegar dados -->
+<script type="module" src="../js/getDataFormWizard.js"></script>
+</html>

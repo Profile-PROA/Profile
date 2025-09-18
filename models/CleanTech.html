@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo CleanTech</title>
+  <style>
+    /* --------------------
+      Variáveis de cores e fontes
+    --------------------- */
+    :root {
+      --primary-color: #111827;  /* Preto suave */
+      --secondary-color: #6B7280; /* Cinza médio */
+      --accent-color: #2563EB; /* Azul */
+      --bg-color: #F9FAFB; /* Fundo claro */
+      --card-bg: #FFFFFF; /* Cartões */
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    /* --------------------
+      Reset e base
+    --------------------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h1, h2, h3 {
+      color: var(--primary-color);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 5px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .personal-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .personal-info div {
+      min-width: 150px;
+    }
+
+    .contact a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .experience, .education {
+      margin-bottom: 15px;
+    }
+
+    .experience h3, .education h3 {
+      margin-bottom: 3px;
+      font-size: 16px;
+    }
+
+    .experience p, .education p {
+      font-size: 14px;
+      color: var(--secondary-color);
+    }
+
+    .skills span {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-right: 8px;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    @media(max-width: 600px){
+      .personal-info {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Dados Pessoais -->
+        <div class="section">
+            <h1 id="fullnameCleanTech">dsffdgs</h1>
+            <div class="personal-info contact">
+                <div>Email: <a href="mailto:email@example.com" id="emailCleanTech"></a></div>
+                <div>Telefone: <span id="phoneCleanTech"></span></div>
+                <div>Localização: <span id="locationCleanTech"></span></div>
+                <div id="portfolioContainer">Portfólio: <a href="#" id="portfolioCleanTech"></a></div>
+                <div id="linkedinContainer">LinkedIn: <a href="#" id="linkedinCleanTech"></a></div>
+            </div>
+        </div>
+
+        <!-- Resumo profissional -->
+        <div class="section" id="skillsCleanTech">
+            <h2>Resumo profissional</h2>
+            
+            <p id="textResumeCleanTech"></p>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="section" id="skillsSectionCleanTech">
+            <h2>Habilidades</h2>
+            <div class="skills" id="skillsCleanTech">
+                <!-- Habilidades dinâmicas aqui -->
+            </div>
+        </div>
+
+        <!-- Experiências -->
+        <div class="section" id="experienceSection">
+            <h2>Experiência Profissional</h2>
+            <div class="experience" id="experienceListCleanTech">
+                <!-- Experiências dinâmicas aqui -->
+            </div>
+        </div>
+
+        <!-- Educação -->
+        <div class="section" id="educationSection">
+            <h2>Educação</h2>
+            <div class="education" id="educationListCleanTech">
+                <!-- Educação dinâmica aqui -->
+            </div>
+        </div>
+    </div>
+</body>
+<!-- JS pegar dados -->
+<script src="../js/getDataFormWizard.js" defer></script>
+</html>
