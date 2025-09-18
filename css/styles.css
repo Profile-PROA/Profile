@@ -26,7 +26,7 @@ body {
 }
 
 section {
-   padding: 100px 5%;
+   padding: 10px 5%;
    position: relative;
 }
 
@@ -1098,7 +1098,8 @@ section {
    }
 
    .principal-home p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      max-width: 500px;
    }
 
    .links-navegacao {
@@ -1108,16 +1109,29 @@ section {
    .container-passos {
       gap: 30px;
    }
+
+   .grade-servicos {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   }
+
+   .grade-modelos {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   }
+
+   .grade-sobre {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+   }
 }
 
 /* -------- MOBILE GRANDE -------- */
 @media (max-width: 768px) {
    section {
-      padding: 50px 5%;
+      padding: 40px 5%;
    }
 
    .container {
-      padding: 0 0.5rem;
+      padding: 0 1rem;
    }
 
    /* Menu responsivo */
@@ -1141,6 +1155,7 @@ section {
    .principal-home p {
       margin: 0 auto 2rem;
       font-size: 1rem;
+      max-width: 100%;
    }
 
    .grade-servicos {
@@ -1191,6 +1206,10 @@ section {
       background-size: cover;
       background-position: center;
    }
+
+   .empresas-logos {
+      gap: 20px;
+   }
 }
 
 /* -------- MOBILE PEQUENO -------- */
@@ -1220,5 +1239,18 @@ section {
 
    .titulo-modelo {
       font-size: 1.1rem;
+   }
+
+   .cartao-modelo {
+      padding: 15px;
+   }
+
+   .container-passos {
+      grid-template-columns: 1fr;
+      gap: 25px;
+   }
+
+   .area-imagem {
+      height: 250px;
    }
 }
