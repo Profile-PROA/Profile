@@ -399,29 +399,36 @@ main {
    margin-bottom: clamp(3rem, 6vw, 4rem);
 }
 
+/* Grid principal - 3 colunas */
 .carrossel-equipe {
-   position: relative;
-   overflow: hidden;
-   margin: 3rem 0;
-   border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin: 3rem 0;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+/* Cada coluna contém 2 cards empilhados */
+.coluna-equipe {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .container-cards-equipe {
-   display: flex;
-   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-   gap: clamp(1.5rem, 4vw, 2.5rem);
-   padding: 1rem;
+   /* Removido - não necessário com o novo layout */
+   display: contents;
 }
 
 .card-membro {
-   min-width: clamp(280px, 45vw, 320px);
-   flex-shrink: 0;
-   background: white;
-   border-radius: 20px;
-   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-   overflow: hidden;
-   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-   border: 2px solid transparent;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
 }
 
 .card-membro:hover {
@@ -432,7 +439,7 @@ main {
 
 .imagem-membro {
    width: 100%;
-   height: clamp(320px, 45vw, 400px);
+   height: clamp(320px, 40vw, 420px);
    overflow: hidden;
    position: relative;
 }
@@ -463,16 +470,23 @@ main {
 }
 
 .info-membro {
-   padding: clamp(1.5rem, 4vw, 2rem);
+   padding: clamp(1.5rem, 3vw, 2rem);
    background: linear-gradient(135deg, #f8f9fa, #ffffff);
 }
 
 .nome-membro {
-   font-size: clamp(1.2rem, 3vw, 1.4rem);
+   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
    font-weight: 700;
    color: #333;
    margin-bottom: 0.5rem;
    transition: color 0.3s ease;
+}
+
+.cargo-membro {
+   font-size: clamp(0.9rem, 2vw, 1rem);
+   color: #666;
+   font-weight: 500;
+   opacity: 0.8;
 }
 
 .card-membro:hover .nome-membro {
@@ -482,11 +496,9 @@ main {
    background-clip: text;
 }
 
+/* Controles do carrossel - mantidos para compatibilidade */
 .controles-carrossel {
-   display: flex;
-   justify-content: center;
-   gap: 1.5rem;
-   margin-top: 3rem;
+   display: none; /* Ocultos no layout de grid fixo */
 }
 
 .botao-carrossel {
@@ -526,10 +538,7 @@ main {
 }
 
 .indicadores-carrossel {
-   display: flex;
-   justify-content: center;
-   gap: 0.8rem;
-   margin-top: 1.5rem;
+   display: none; /* Ocultos no layout de grid fixo */
 }
 
 .indicador {
@@ -559,6 +568,42 @@ main {
 
 .indicador.ativo::before {
    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .carrossel-equipe {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .carrossel-equipe {
+        grid-template-columns: 1fr;
+    }
+    
+    .coluna-equipe {
+        gap: clamp(1rem, 3vw, 1.5rem);
+    }
+    
+    .imagem-membro {
+        height: clamp(250px, 45vw, 350px);
+    }
+}
+
+@media (max-width: 480px) {
+    .secao-equipe {
+        padding: clamp(2rem, 8vw, 4rem) clamp(0.5rem, 3vw, 1rem);
+    }
+    
+    .titulo-equipe {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+    
+    .imagem-membro {
+        height: clamp(220px, 50vw, 300px);
+    }
 }
 
 /* ---- SEÇÃO REDIRECIONAMENTO ---- */
