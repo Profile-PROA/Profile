@@ -1136,7 +1136,7 @@ section {
 
    /* Menu responsivo */
    .links-navegacao {
-      display: none; /* trocar futuramente por menu hamburguer */
+      display: none;
    }
 
    .navegacao {
