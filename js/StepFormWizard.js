@@ -1,7 +1,7 @@
 // Classe formulário wizard
 class StepFormWizard {
     // Construtor da classe
-    constructor(steps, btnNext, btnPrev, btnBackPage, sidebarSpans, stepsHeader, stepsDescription) {
+    constructor(steps, btnNext, btnPrev, btnBackPage, sidebarSpans, stepsHeader, stepsDescription, boxBtnPdf) {
         this.steps = document.querySelectorAll(steps)
         this.stepsHeader = document.querySelectorAll(stepsHeader)
         this.stepsDescription = document.querySelectorAll(stepsDescription)
@@ -9,6 +9,7 @@ class StepFormWizard {
         this.btnPrev = document.querySelectorAll(btnPrev)
         this.btnBackPage = document.getElementById(btnBackPage)
         this.sidebarSpans = document.querySelectorAll(sidebarSpans)
+        this.boxBtnPdf = document.querySelector(boxBtnPdf)
         this.activeClass = "active"
         this.currentStep = 0
     }
@@ -85,6 +86,14 @@ class StepFormWizard {
                 }
             });
         }
+
+        if (this.boxBtnPdf) {
+            if (index === this.steps.length - 1) {
+                this.boxBtnPdf.disabled = false; // habilita
+            } else {
+                this.boxBtnPdf.disabled = true; // desabilita
+            }
+        }
     }
 
     // Validação dos inputs se estão vazios
@@ -115,6 +124,7 @@ const formWizard = new StepFormWizard (
   "#list-steps span",
   ".step-header-content",
   ".step-description-content",
+  "#box-btn-pdf button"
 );
 
 // Chamando metodo init

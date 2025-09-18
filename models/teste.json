@@ -1,0 +1,33 @@
+{
+  "curriculo": {
+    "dados_pessoais": {
+      "nome": " ",
+      "email": " ",
+      "telefone": " ",
+      "linkedin": " ",
+      "cidade_estado": " ",
+      "portfolio": " "
+    },
+    "resumo_profissional": " ",
+    "experiencias": [
+      {
+        "cargo": " ",
+        "empresa": " ",
+        "periodo": " ",
+        "atividades": " ",
+        "resultados": " "
+      }
+    ],
+    "formacao_academica": [
+      {
+        "curso": " ",
+        "instituicao": " ",
+        "periodo": " "
+      }
+    ],
+    "habilidades": {
+      "tecnicas": " ",
+      "interpessoais": " "
+    }
+  }
+}

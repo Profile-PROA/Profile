@@ -26,7 +26,7 @@
         </sectiion>
         
         <sectiion id="box-btn-pdf">
-            <button type="button" class="btn-forms btn-forms-orange btn-forms-disable" disabled aria-disabled="true">
+            <button type="button" id="btnPDF" class="btn-forms btn-forms-orange btn-forms-disable" disabled aria-disabled="true">
                 <iconify-icon icon="material-symbols:download" width="24" height="24"></iconify-icon>
                 Baixar PDF
             </button>
@@ -62,13 +62,13 @@
                     Preferências
                 </li>
                 
-                <li id="li-models">
+                <!-- <li id="li-models">
                     <span>6</span>
                     Modelos
-                </li>
+                </li> -->
                 
                 <li id="li-preview">
-                    <span>7</span>
+                    <span>6</span>
                     Preview
                 </li>
             </ul>
@@ -102,10 +102,10 @@
                         Preferência
                     </div>
 
-                    <div class="step-header-content">
+                    <!-- <div class="step-header-content">
                         <iconify-icon icon="ph:books" width="35" height="35"></iconify-icon>
                         Modelos
-                    </div>
+                    </div> -->
 
                     <div class="step-header-content">
                         <iconify-icon icon="weui:eyes-on-outlined" width="35" height="35"></iconify-icon>
@@ -141,10 +141,10 @@
                         Informações fundamentais para o objetivo do currículo
                     </span>
 
-                    <span class="step-description-content">
+                    <!-- <span class="step-description-content">
                         <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
                         Modelo base do currículo
-                    </span>
+                    </span> -->
 
                     <span class="step-description-content">
                         <iconify-icon icon="proicons:pencil-sparkle" width="24" height="24"></iconify-icon>
@@ -398,7 +398,7 @@
                     </div>
 
                     <!-- Etapa 6: Modelos -->
-                    <div id="step-models" class="step">
+                    <!-- <div id="step-models" class="step">
                         <div id="box-models">
                             <div class="box-inputs-models">
                                 <input type="radio" id="cleanTech" name="models" value="cleanTech" checked>
@@ -418,25 +418,6 @@
                                     </div>
                                 </label>
     
-    
-                                <input type="radio" id="startupSpark" name="models" value="startupSpark">
-                                <label for="startupSpark" class="card-models">
-                                    <div class="header-card-models">
-                                        <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
-                                        <h3>StartupSpark</h3>
-                                    </div> 
-                                    
-                                    <span class="type-model-card">Startup</span>
-    
-                                    <p>Mais cor e hierarquia curta para leitura rápida.</p>
-                                    
-                                    <div class="category-model-card">
-                                        <span>Criativo</span>
-                                        <span>Impacto visual</span>
-                                    </div>
-                                </label>
-    
-    
                                 <input type="radio" id="classicPro" name="models" value="classicPro">
                                 <label for="classicPro" class="card-models">
                                     <div class="header-card-models">
@@ -453,9 +434,25 @@
                                     </div>
                                 </label>
     
+                                <input type="radio" id="startupSpark" name="models" value="startupSpark" style="display: none;">
+                                <label for="startupSpark" class="card-models" style="display: none;">
+                                    <div class="header-card-models">
+                                        <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
+                                        <h3>StartupSpark</h3>
+                                    </div> 
+                                    
+                                    <span class="type-model-card">Startup</span>
     
-                                <input type="radio" id="atsPlain" name="models" value="atsPlain">
-                                <label for="atsPlain" class="card-models">
+                                    <p>Mais cor e hierarquia curta para leitura rápida.</p>
+                                    
+                                    <div class="category-model-card">
+                                        <span>Criativo</span>
+                                        <span>Impacto visual</span>
+                                    </div>
+                                </label>
+    
+                                <input type="radio" id="atsPlain" name="models" value="atsPlain" style="display: none;">
+                                <label for="atsPlain" class="card-models" style="display: none;">
                                     <div class="header-card-models">
                                         <iconify-icon icon="material-symbols:docs-outline" width="34" height="34"></iconify-icon>
                                         <h3>ATS Plain</h3>
@@ -483,13 +480,15 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Etapa 7: Preview -->
                     <div id="step-preview" class="step">
                         <div id="box-preview">
-                            <div id="box-preview-curriculum">
-    
+                            <div id="box-preview-curriculum" style="overflow: auto;">
+                                <div style="width: 100%;" id="contentPdf">
+
+                                </div>
                             </div>
     
                             <div class="btns-forms-content">
@@ -541,11 +540,31 @@
 <!-- JS Classe EducationManager -->
 <script type="module" src="../js/EducationManager.js"></script>
 
-<!-- JS Api -->
-<script type="module" src="../js/api.js"></script>
-
 <!-- JS pegar dados -->
 <script type="module" src="../js/getDataFormWizard.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.3/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- Script com a função -->
+<script type="text/javascript">
+document.getElementById("btnPDF").addEventListener("click", async function() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const elemento = document.getElementById("contentPdf");
+
+    await doc.html(elemento, {
+        callback: function (doc) {
+        doc.save("curriculo.pdf"); // Salva o PDF
+        },
+        x: 10,
+        y: 10,
+        width: 180, // Ajusta a largura do conteúdo no PDF
+        windowWidth: elemento.scrollWidth
+    });
+});
+</script>
 
 <!-- Link para Icones do Iconify -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>

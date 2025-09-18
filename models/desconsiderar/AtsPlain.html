@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo ATS - Plain</title>
+<style>
+    html {
+        display: flex;
+        justify-content: center;
+    }
+  body {
+    font-family: Arial, sans-serif;
+    width: 80%;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
+    margin: 20px;
+  }
+  h1 { font-size: 22px; margin-bottom: 5px; }
+  h2 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; border-bottom: 1px solid #000; }
+  p, li { margin-bottom: 4px; }
+  ul { list-style-type: disc; margin-left: 20px; }
+
+</style>
+</head>
+<body>
+    <!-- Dados Pessoais -->
+    <h1 id="fullname">Nome Completo</h1>
+    <p>Email: <span id="email">email@example.com</span></p>
+    <p>Telefone: <span id="phone">+55 11 99999-9999</span></p>
+    <p>Localização: <span id="location">Cidade, Estado</span></p>
+    <p id="portfolioContainer">Portfólio: <span id="portfolio">portfolio.com</span></p>
+    <p id="linkedinContainer">LinkedIn: <span id="linkedin">linkedin.com/in/usuario</span></p>
+
+    <!-- Resumo profissional -->
+    <div id="resumeSection">
+        <h2>Resumo profissional</h2>
+        <p id="resumeProf"></p>
+    </div>
+
+    <!-- Habilidades -->
+    <div id="skillsSection">
+        <h2>Habilidades</h2>
+        <ul id="skillsHard"></ul>
+        <ul id="skillsSoft"></ul>
+    </div>
+
+    <!-- Experiências -->
+    <div id="experienceSection">
+        <h2>Experiência Profissional</h2>
+        <div id="experienceList"></div>
+    </div>
+
+    <!-- Educação -->
+    <div id="educationSection">
+        <h2>Educação</h2>
+        <div id="educationList"></div>
+    </div>
+
+    <script>
+        // Exemplo de dados dinâmicos
+        const data = {
+            fullname: "Nome completo",
+            email: "nome@example.com",
+            phone: "+55 11 99999-9999",
+            state: "SP",
+            city: "São Paulo",
+            portfolio: "https://portfolio.com",
+            linkedin: "https://linkedin.com/in/nome",
+            skills: ["JavaScript", "Node.js", "Gestão de Projetos", "SQL"],
+            experience: [
+                {
+                    role: "Analista de Sistemas",
+                    company: "Empresa Y",
+                    period: "2021 - Atual",
+                    location: "São Paulo, SP",
+                    description: "Responsável por levantamento de requisitos, automação de processos e redução de custos em 20%."
+                },
+                {
+                    role: "Estagiário em TI",
+                    company: "Empresa Z",
+                    period: "2020 - 2021",
+                    location: "São Paulo, SP",
+                    description: "Atendimento de suporte técnico e implantação de melhorias de infraestrutura."
+                }
+            ],
+            education: [
+                {
+                    course: "Gestão de TI",
+                    school: "FATEC Itaquaquecetuba",
+                    period: "2022 - 2025"
+                }
+            ]
+        };
+
+        // Preencher dados pessoais
+    </script>
+
+</body>
+<!-- JS pegar dados -->
+<script type="module" src="../js/getDataFormWizard.js"></script>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo - ClassicPro</title>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-family: "Georgia", serif;
+      font-size: 32px;
+      margin: 0;
+      color: #1a2a40;
+      border-bottom: 2px solid #1a2a40;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #1a2a40;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+      margin: 20px 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .personal-info {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .personal-info span {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .personal-info a {
+      color: #1a2a40;
+      text-decoration: none;
+    }
+
+    .personal-info a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 6px 0 0 20px;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    .job {
+      margin-bottom: 18px;
+    }
+
+    .job-title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #1a2a40;
+    }
+
+    .company {
+      font-style: italic;
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 4px;
+    }
+
+    .period {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .edu {
+      margin-bottom: 14px;
+    }
+
+    .school {
+      font-weight: bold;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Nome -->
+    <h1 id="fullname">[Seu Nome Completo]</h1>
+
+    <div class="layout">
+      <!-- Coluna Esquerda -->
+      <div>
+        <!-- Dados Pessoais -->
+        <div class="section personal-info">
+          <h2>Contato</h2>
+          <span id="emailClassicPro">📧 </span>
+          <span id="phoneClassicPro">📱 </span>
+          <span><span id="cityClassicPro">São Paulo</span>, <span id="state">SP</span></span>
+          <span id="portfolioClassicPro">🌐 <a href="#"></a></span>
+          <span id="linkedinClassicPro">🔗 <a href="#"></a></span>
+        </div>
+
+        <!-- Resumo profissional -->
+        <div class="section">
+            <h2>Resumo profissional</h2>
+
+            <p id="textResumeClassicPro"></p>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="section">
+            <h2>Habilidades</h2>
+
+            <h3>Técnicas:</h3>
+            <ul id="skillsHardClassicPro">
+            </ul>
+
+            <h3>Interpessoais:</h3>
+            <ul id="skillsSoftClassicPro">
+            </ul>
+        </div>
+
+        <!-- Educação -->
+        <div class="section">
+          <h2>Educação</h2>
+          <div class="edu">
+            <div class="school" id="schoolClassicPro">FATEC Itaquaquecetuba</div>
+            <div class="period" id="periodClassicPro">2022 - Cursando</div>
+            <div id="ClassicPro">Gestão da Tecnologia da Informação</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Direita -->
+      <div>
+        <!-- Experiência -->
+        <div class="section">
+          <h2>Experiência Profissional</h2>
+
+          <div class="job">
+            <div class="job-title">Analista de Sistemas</div>
+            <div class="company">Empresa X | <span class="period">2021 - Atual</span></div>
+            <ul>
+              <li>Responsável pela análise e implementação de soluções de TI.</li>
+              <li>Automatização de processos, reduzindo custos em 15%.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-title">Estagiário de TI</div>
+            <div class="company">Empresa Y | <span class="period">2019 - 2021</span></div>
+            <ul>
+              <li>Suporte técnico e desenvolvimento de relatórios.</li>
+              <li>Colaboração em projetos de migração de sistemas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- JS pegar dados -->
+<script type="module" src="../js/getDataFormWizard.js"></script>
+</html>
