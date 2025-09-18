@@ -325,22 +325,47 @@ section {
    margin-bottom: 20px;
 }
 
-.imagem-passo {
+.imagem-passo#passo1 {
    width: 100%;
    height: 200px;
-   background: #f8f9fa;
    border-radius: 15px;
    margin-bottom: 20px;
    display: flex;
    align-items: center;
    justify-content: center;
-   border: 2px dashed #ddd;
    transition: all 0.3s ease;
-   background-image: url('');
-   background-size: 50px;
-   background-repeat: no-repeat;
-   background-position: center;
-   color: #999;
+   background-image: url(../assets/images/cadastro_rapido.jpg);
+   background-size: cover;
+   font-size: 0.9em;
+   text-align: center;
+}
+
+.imagem-passo#passo2 {
+   width: 100%;
+   height: 200px;
+   border-radius: 15px;
+   margin-bottom: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease;
+   background-image: url(../assets/images/escolha.jpg);
+   background-size: cover;
+   font-size: 0.9em;
+   text-align: center;
+}
+
+.imagem-passo#passo3 {
+   width: 100%;
+   height: 200px;
+   border-radius: 15px;
+   margin-bottom: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease;
+   background-image: url(../assets/images/entrega_curriculo.jpg);
+   background-size: cover;
    font-size: 0.9em;
    text-align: center;
 }
@@ -480,6 +505,28 @@ section {
    z-index: 2;
 }
 
+.cartao-servico#imagem1{
+   background-image: url(../assets/icons/Resultado.jpg);
+   background-size: cover;
+   padding: 2.5rem;
+   border-radius: 20px;
+   border: none;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+}
+
+.cartao-servico#imagem2{
+   background-image: url(../assets/icons/Cadastro.jpg);
+   background-size: cover;
+   padding: 2.5rem;
+   border-radius: 20px;
+   border: none;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+}
+
 /* ---- SEÇÃO SLOGAN ---- */
 .secao-slogan {
    padding: clamp(3rem, 8vw, 5rem) 0;
@@ -580,7 +627,7 @@ section {
 }
 
 .cartao-modelo {
-   background: rgba(255, 255, 255, 0.95);
+   background: rgb(255, 255, 255, 0.95);
    border-radius: 20px;
    padding: 25px;
    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -1005,8 +1052,18 @@ section {
 }
 
 /* -------- MOBILE -------- */
-@media (max-width: 480px) {
+@media (max-width: 390px) {
    .botao-cta{
       font-size: 15px;
+   }
+
+   .cartao-servico#imagem1 {
+      height: 239px;
+      padding: 2rem;
+   }
+
+   .cartao-servico#imagem2 {
+      height: 239px;
+      padding: 2rem;
    }
 }

@@ -6,7 +6,7 @@ let slideAtual = 0;
 const cards = containerCards.querySelectorAll('.card-membro');
 const totalCards = cards.length;
 
-const totalIndicadores = 3;
+const totalIndicadores = 6;
 
 for (let i = 0; i < totalIndicadores; i++) {
     const indicador = document.createElement('div');
