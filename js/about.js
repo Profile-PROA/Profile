@@ -1,5 +1,4 @@
 /*Seção - Equipe*/
-
 const containerCards = document.getElementById('containerCardsEquipe');
 const indicadoresContainer = document.getElementById('indicadoresCarrossel');
 let slideAtual = 0;

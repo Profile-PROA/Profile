@@ -191,8 +191,6 @@ main {
    padding: 2px;
    background: linear-gradient(135deg, #FA6200, #F09617, #00C48C);
    border-radius: inherit;
-   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-   mask-composite: xor;
    z-index: -1;
 }
 
@@ -223,17 +221,6 @@ main {
    font-family: var(--fonte-sans, 'Inter', sans-serif);
    background: linear-gradient(135deg, #f2f2f2, #e8e8e8);
    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 2rem);
-}
-
-.missao_visao_valores h1 {
-   text-align: center;
-   margin-bottom: clamp(3rem, 8vw, 5rem);
-   font-size: clamp(2.5rem, 6vw, 4rem);
-   font-weight: 700;
-   background: linear-gradient(135deg, #FA6200, #F09617, #00C48C);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-clip: text;
 }
 
 .conteudo_missao {
@@ -292,7 +279,7 @@ main {
    transform: translateY(calc(100% - 6rem));
 }
 
-.conteudo-card > *:not(.titulo) {
+.conteudo-card>*:not(.titulo) {
    opacity: 0;
    transform: translateY(1.5rem);
    transition: all 0.4s ease;
@@ -340,7 +327,7 @@ main {
    transform: translateY(0);
 }
 
-.card:hover .conteudo-card > *:not(.titulo) {
+.card:hover .conteudo-card>*:not(.titulo) {
    opacity: 1;
    transform: translateY(0);
    transition-delay: 0.2s;
@@ -679,6 +666,7 @@ main {
       opacity: 0;
       transform: translateY(50px);
    }
+
    to {
       opacity: 1;
       transform: translateY(0);
@@ -689,6 +677,7 @@ main {
    from {
       opacity: 0;
    }
+
    to {
       opacity: 1;
    }
@@ -699,6 +688,7 @@ main {
       opacity: 0;
       transform: translateX(-50px);
    }
+
    to {
       opacity: 1;
       transform: translateX(0);
@@ -710,6 +700,7 @@ main {
       opacity: 0;
       transform: translateX(50px);
    }
+
    to {
       opacity: 1;
       transform: translateX(0);
@@ -723,7 +714,7 @@ main {
    .container {
       max-width: 1400px;
    }
-   
+
    .conteudo_missao {
       grid-template-columns: repeat(3, 1fr);
       max-width: 1600px;
@@ -735,19 +726,44 @@ main {
    .conteudo-sobre {
       grid-template-columns: 1fr 1fr;
    }
-   
+
    .texto-sobre {
       order: 1;
       animation: slideInLeft 0.8s ease-out;
    }
-   
+
    .imagem-sobre {
       order: 2;
       animation: slideInRight 0.8s ease-out;
    }
-   
+
    .conteudo_missao {
       grid-template-columns: repeat(3, 1fr);
+   }
+
+   .conteudo_missao {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+   }
+
+   .card {
+      height: clamp(400px, 50vw, 550px);
+      padding: clamp(1.5rem, 4vw, 2rem);
+   }
+
+   .titulo {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+   }
+
+   .imagem-card {
+      width: clamp(140px, 25vw, 200px);
+      height: clamp(140px, 25vw, 200px);
+      margin: clamp(1rem, 3vw, 2rem) 0;
+   }
+
+   .descricao {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin: clamp(1rem, 3vw, 1.5rem) 0;
    }
 }
 
@@ -756,51 +772,102 @@ main {
    .placeholder-imagem {
       background-attachment: scroll;
    }
-   
+
    .conteudo_missao {
       grid-template-columns: repeat(2, 1fr);
    }
-   
+
    .card:last-child {
       grid-column: 1 / -1;
       max-width: 450px;
       margin: 0 auto;
    }
-   
+
    .container-cards-equipe {
       gap: 1.5rem;
    }
+
+   .conteudo_missao {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+   }
+
+   .card {
+      height: clamp(400px, 50vw, 550px);
+      padding: clamp(1.5rem, 4vw, 2rem);
+   }
+
+   .titulo {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+   }
+
+   .imagem-card {
+      width: clamp(140px, 25vw, 200px);
+      height: clamp(140px, 25vw, 200px);
+      margin: clamp(1rem, 3vw, 2rem) 0;
+   }
+
+   .descricao {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin: clamp(1rem, 3vw, 1.5rem) 0;
+   }
+
+   .conteudo_missao {
+      grid-template-columns: 1fr;
+      gap: clamp(1rem, 5vw, 2rem);
+   }
+
+   .card {
+      height: clamp(350px, 55vw, 450px);
+      padding: clamp(1rem, 3vw, 1.5rem);
+   }
+
+   .titulo {
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
+   }
+
+   .imagem-card {
+      width: clamp(120px, 35vw, 180px);
+      height: clamp(120px, 35vw, 180px);
+      margin: clamp(0.8rem, 3vw, 1.5rem) 0;
+   }
+
+   .descricao {
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      margin: clamp(0.8rem, 3vw, 1.2rem) 0;
+   }
 }
+
 
 /* Mobile Grande */
 @media (max-width: 767px) {
    .placeholder-imagem {
       background-attachment: scroll;
    }
-   
+
    .subtitulo {
       margin-bottom: 2.5rem;
    }
-   
+
    .conteudo_missao {
       grid-template-columns: 1fr;
       gap: 2rem;
    }
-   
+
    .card {
       max-width: 100%;
       height: clamp(400px, 70vw, 500px);
    }
-   
+
    .container-cards-equipe {
       gap: 1rem;
       padding: 0.5rem;
    }
-   
+
    .card-membro {
       min-width: 300px;
    }
-   
+
    .controles-carrossel {
       gap: 1rem;
       margin-top: 2rem;
@@ -812,34 +879,58 @@ main {
    .secao-principal {
       padding: 1.5rem;
    }
-   
+
    .conteudo-principal {
       padding: 0 0.5rem;
    }
-   
+
    .container {
       padding: 0 1rem;
    }
-   
+
    .container-cards-equipe {
       padding: 0;
    }
-   
+
    .card-membro {
       min-width: 270px;
    }
-   
+
    .controles-carrossel {
       gap: 0.8rem;
    }
-   
+
    .container-secao {
       margin: 15px;
       padding: 40px 25px;
    }
-   
+
    .card {
       height: clamp(350px, 80vw, 450px);
+   }
+
+   .missao_visao_valores {
+      padding: clamp(2rem, 6vw, 3rem) clamp(1rem, 4vw, 1.5rem);
+   }
+
+   .card {
+      height: clamp(300px, 50vw, 400px);
+      padding: clamp(0.8rem, 3vw, 1.2rem);
+   }
+
+   .titulo {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+   }
+
+   .imagem-card {
+      width: clamp(100px, 35vw, 160px);
+      height: clamp(100px, 35vw, 160px);
+      margin: clamp(0.5rem, 3vw, 1rem) 0;
+   }
+
+   .descricao {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      margin: clamp(0.5rem, 2vw, 1rem) 0;
    }
 }
 
@@ -848,19 +939,19 @@ main {
    .card-membro {
       min-width: 250px;
    }
-   
+
    .titulo-principal {
       font-size: 2rem;
    }
-   
+
    .subtitulo {
       font-size: 1rem;
    }
-   
+
    .card {
       height: clamp(320px, 85vw, 400px);
    }
-   
+
    .container-secao {
       padding: 30px 20px;
    }
@@ -915,6 +1006,7 @@ main {
 
 /* Reduce motion para acessibilidade */
 @media (prefers-reduced-motion: reduce) {
+
    *,
    ::before,
    ::after {
@@ -922,4 +1014,4 @@ main {
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
    }
-} 
+}
